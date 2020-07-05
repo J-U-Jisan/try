@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','GuestController@index')->name('welcome');
 
 
 Auth::routes();
@@ -24,11 +22,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix'  =>  'admin'], function () {
-    Route::get('login', 'LoginController@showLoginForm');
-    Route::post('login', 'LoginController@login');
-    Route::get('logout', 'LoginController@logout');
+    Route::get('logout', 'Admin\LoginController@logout')->name('admin.logout');
+    Route::post('login', 'Admin\LoginController@login');
+    Route::get('login', function(){
+        return view('admin.login');
+    })->name('admin.login');
 
-    Route::get('/', function(){
-        return view('admin.index');
-    });
+    Route::get('/','Admin\HomeController@index')->name('admin');
+    Route::post('/slider','Admin\HomeController@slider')->name('admin.slider');
+    Route::delete('/slider','Admin\HomeController@slider_delete')->name('admin.slider.delete');
 });
