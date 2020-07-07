@@ -10,6 +10,8 @@ class GuestController extends Controller
     public function index()
     {
         $sliders = DB::table('slider')->get();
-        return view('welcome',compact('sliders'));
+        $videos = DB::table('video')->get();
+
+        return view('welcome',compact('sliders','videos'));
     }
 }

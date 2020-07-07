@@ -93,80 +93,77 @@
                     <a class="dropdown-item" href="#work">How it works</a>
                 </div>
             </li>
+            <li class="nav-item">
+                <button class="border-dark bg-transparent"><a class="nav-link" href="/">Sign In</a></button>
+            </li>
         </ul>
     </div>
 </nav>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <?php $cnt=0; ?>
-        @foreach($sliders as $slider)
-            <li data-target="#carouselExampleIndicators" data-slide-to="{{ $cnt }}" class="{{ $cnt?'': 'active' }}"></li>
-           <?php $cnt++ ?>
-         @endforeach
-    </ol>
-    <div class="carousel-inner">
-        <?php $cnt=0; ?>
-        @foreach($sliders as $slider)
-            <?php $cnt++; ?>
 
-            <div class="carousel-item {{ $cnt!=1?'': 'active' }}">
-                <img class="d-block w-100 slider-h" src="{{ asset('storage/slider/'.$slider->name) }}">
-            </div>
-        @endforeach
+<div class="row">
+    <div id="carouselExampleIndicators" class="carousel slide col-md-9" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <?php $cnt=0; ?>
+            @foreach($sliders as $slider)
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $cnt }}" class="{{ $cnt?'': 'active' }}"></li>
+               <?php $cnt++ ?>
+             @endforeach
+        </ol>
+        <div class="carousel-inner">
+            <?php $cnt=0; ?>
+            @foreach($sliders as $slider)
+                <?php $cnt++; ?>
 
+                <div class="carousel-item {{ $cnt!=1?'': 'active' }}">
+                    <img class="d-block w-100 slider-h" src="{{ asset('storage/slider/'.$slider->name) }}">
+                </div>
+            @endforeach
+
+        </div>
+        <a class="carousel-control-prev mt-5" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next mt-5" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    <a class="carousel-control-prev mt-5" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next mt-5" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+    <div class="col-md-3 mt-5">
+        <div class="p-4"></div>
+        <div class="card notice border-info">
+            <div class="card-header text-center bg-success text-white">
+                Notice
+            </div>
+            <div class="card-body" style="overflow: auto;">
+                <p class="card-text"><a href="">With supporting text below as a natural lead-in to additional content.</a></p>
+                <hr>
+                <p class="card-text"><a href="">With supporting text below as a natural lead-in to additional content.</a></p>
+                <hr>
+                <p class="card-text"><a href="">With supporting text below as a natural lead-in to additional content.</a></p>
+                <hr>
+                <p class="card-text"><a href="">With supporting text below as a natural lead-in to additional content.</a></p>
+                <hr>
+                <p class="card-text"><a href="">With supporting text below as a natural lead-in to additional content.</a></p>
+                <hr>
+                <p class="card-text"><a href="">With supporting text below as a natural lead-in to additional content.</a></p>
+                <hr>
+            </div>
+        </div>
+    </div>
 </div>
 <main class="" style="">
-    <section class="clearfix urgent-donation-s2">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-7 col-sm-12 urgent-donation" style="background: url(./img/bidyanondo-scholarship_thumbnail_image.jpg) center center/cover no-repeat local;">
-
-                    <div class="donation">
-                        <h2>Sponsor a Child</h2>
-                        <span>Empowering childern for a bright future</span>
-                        <p class="text-justify">
-                            We are taking the responsibility of 300 orphan
-                            children through our orphanages in Bangladesh.
-                            You can change the life of underprivileged
-                            children by paying 2000 BDT per months. You
-                            can lead them to have a bright future with
-                            your monthly donations.
-                        </p>
-                        <a href="./html file/sponsor.html"><button type="button" style="animation-duration: 2s;animation-delay: 0s;animation-iteration-count: 1;" class="btn animated fadeInDown float-left btn-projects-danger">Sponsor</button></a>
-                    </div>
+    <section class="clearfix">
+        <div class="container-fluid pt-5" style="background: #d4d3d3">
+            <h3 class="text-center">Thoughts About Try</h3>
+            <div class="row mt-5">
+                @foreach($videos as $video)
+                <div class="col-md-5 col-sm-12" style="margin: 0 auto !important;">
+                    <iframe height="400" class="col-md-12" src="{{ $video->link }}"
+                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
                 </div>
-                <div class="col-md-5 col-12 donation-meter-body" style="text-align: center;">
-                    <div class="donation-meter-details">
-                        <div class="raised">
-                            <span>Raised</span>
-                            <h3>272</h3>
-                        </div>
-
-                        <div class="col-sm-4 col-sm-offset-4">
-                            <div class="my-progress-bar"></div>
-                        </div>
-
-                        <div class="goal">
-                            <span>Goal</span>
-                            <h3>300</h3>
-                        </div>
-                    </div>
-                    <div class="donation-form">
-                        <form class="form">
-                            <div><a href="./html file/sing-up.html" class="btn theme-btn">Sign up</a></div>
-                            <div><a href="./html file/sponsor.html" class="btn theme-btn">Sponsor</a></div>
-                        </form>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

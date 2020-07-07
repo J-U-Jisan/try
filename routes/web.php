@@ -31,4 +31,11 @@ Route::group(['prefix'  =>  'admin'], function () {
     Route::get('/','Admin\HomeController@index')->name('admin');
     Route::post('/slider','Admin\HomeController@slider')->name('admin.slider');
     Route::delete('/slider','Admin\HomeController@slider_delete')->name('admin.slider.delete');
+
+    Route::post('/notice','Admin\HomeController@notice')->name('admin.notice');
+    Route::delete('/notice','Admin\HomeController@notice_delete')->name('admin.notice.delete');
+    Route::put('/notice','Admin\HomeController@notice_edit')->name('admin.notice.edit');
+
+    Route::post('/video','Admin\HomeController@video')->name('admin.video');
+    Route::delete('/video','Admin\HomeController@video_delete')->name('admin.video.delete');
 });
