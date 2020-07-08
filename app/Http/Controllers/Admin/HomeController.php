@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Response;
 use File;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -22,7 +23,9 @@ class HomeController extends Controller
 
             $videos = DB::table('video')->get();
 
-            return view('admin.home',compact('sliders','notices','videos'));
+            $partners = DB::table('partner')->get();
+
+            return view('admin.home',compact('sliders','notices','videos','partners'));
         }
         else return redirect()->route('admin.login');
     }
@@ -38,10 +41,10 @@ class HomeController extends Controller
 
             DB::table('slider')->insert($data);
             $slider_success = 'Image Uploaded Successfully';
-            return redirect(route('admin'))->with('slider_success',$slider_success);
+            return redirect(route('admin').'#slider')->with('slider_success',$slider_success);
         }
         $slider_fail = 'Image Upload Failed';
-        return redirect(route('admin'))->with('slider_fail',$slider_fail);
+        return redirect(route('admin').'#slider')->with('slider_fail',$slider_fail);
     }
     public function slider_delete(Request $request){
         $slider = DB::table('slider')->find($request->id);
@@ -52,7 +55,7 @@ class HomeController extends Controller
 
         DB::table('slider')->where('id',$request->id)->delete();
 
-        return redirect()->route('admin');
+        return redirect(route('admin').'#slider');
     }
 
     public function notice(Request $request){
@@ -66,10 +69,10 @@ class HomeController extends Controller
             DB::table('notice')->insert($data);
 
             $notice_success = 'Notice Uploaded Successfully';
-            return redirect(route('admin'))->with('notice_success',$notice_success);
+            return redirect(route('admin').'#notice')->with('notice_success',$notice_success);
         }
         $notice_fail = 'Notice Upload Failed';
-        return redirect(route('admin'))->with('notice_fail',$notice_fail);
+        return redirect(route('admin').'#notice')->with('notice_fail',$notice_fail);
     }
 
     public function notice_edit(Request $request){
@@ -77,7 +80,7 @@ class HomeController extends Controller
             ->where('id',$request->id)
             ->update(['title'=>$request->title]);
 
-        return redirect()->route('admin');
+        return redirect(route('admin').'#notice');
     }
 
     public function notice_delete(Request $request){
@@ -89,7 +92,30 @@ class HomeController extends Controller
 
         DB::table('notice')->where('id',$request->id)->delete();
 
-        return redirect()->route('admin');
+        return redirect(route('admin').'#notice');
+    }
+
+    public function notice_view($id){
+        $data = DB::table('notice')->where('id',$id)->first();
+        $name = 'storage/notice/'.$data->name;
+        if (File::isFile($name))
+        {
+            $file = File::get($name);
+
+            $response = Response::make($file, 200);
+
+            $infoPath = pathinfo(public_path($name));
+            $extension = $infoPath['extension'];
+
+            if($extension=='pdf')
+                 $response->header('Content-Type', 'application/pdf');
+            else{
+                return Response::download($name, $data->name);
+            }
+
+            return $response;
+        }
+        return redirect(route('admin').'#notice');
     }
 
     public function video(Request $request){
@@ -101,16 +127,16 @@ class HomeController extends Controller
                 $data = array('link'=>$request->video);
                 DB::table('video')->insert($data);
 
-                return redirect()->route('admin');
+                return redirect(route('admin').'#video');
             }
             else{
-                return redirect()->route('admin')->with('videoFail','Already Uploaded 2 Video');
+                return redirect(route('admin').'#video')->with('videoFail','Already Uploaded 2 Video');
             }
         }
     }
 
     public function video_delete(Request $request){
         DB::table('video')->where('id',$request->id)->delete();
-        return redirect()->route('admin');
+        return redirect(route('admin').'#video');
     }
 }

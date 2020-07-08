@@ -5,6 +5,10 @@
 .notice{
     height: 503px !important;
 }
+img.partner{
+    height: 180px !important;
+    width: 100% !important;
+}
 *{
 	margin: 0;
 	padding: 0;
