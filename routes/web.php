@@ -41,10 +41,18 @@ Route::group(['prefix'  =>  'admin'], function () {
     Route::post('/video','Admin\HomeController@video')->name('admin.video');
     Route::delete('/video','Admin\HomeController@video_delete')->name('admin.video.delete');
 
+    Route::get('/partner','Admin\PartnerController@index')->name('admin.partner');
     Route::post('/partner','Admin\PartnerController@partner')->name('admin.partner');
     Route::delete('/partner','Admin\PartnerController@partner_delete')->name('admin.partner.delete');
     Route::put('/partner','Admin\PartnerController@partner_edit')->name('admin.partner.edit');
+
+    Route::get('/event','Admin\EventController@index')->name('admin.event');
+    Route::post('/event/upcoming','Admin\EventController@upcoming')->name("admin.event.upcoming");
+    Route::put('/event/upcoming','Admin\EventController@upcoming_action')->name("admin.event.upcoming");
+    Route::post('/event/ongoing','Admin\EventController@ongoing')->name("admin.event.ongoing");
+    Route::put('/event/ongoing','Admin\EventController@ongoing_action')->name("admin.event.ongoing");
+    Route::delete('/event/closed','Admin\EventController@closed')->name("admin.event.closed");
 });
 
-Route::get('/sponsor', 'GuestController@sponsor')->name('sponsor');
+Route::get('/partner', 'GuestController@partner')->name('partner');
 

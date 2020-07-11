@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class PartnerController extends Controller
 {
+    public function index()
+    {
+        $partners = DB::table('partner')->get();
+        return view('admin.sponsor',compact('partners'));
+    }
     public function partner(Request $request){
         if($request->hasFile('logo')){
 
@@ -23,7 +28,7 @@ class PartnerController extends Controller
             return redirect(route('admin').'#partner')->with('partner_success',$partner_success);
         }
         $partner_fail = 'Partner Upload Failed';
-        return redirect(route('admin').'#partner')->with('partner_fail',$partner_fail);
+        return redirect(route('admin.partner').'#partner')->with('partner_fail',$partner_fail);
     }
 
     public function partner_edit(Request $request){
@@ -31,7 +36,7 @@ class PartnerController extends Controller
             ->where('id',$request->id)
             ->update(['title'=>$request->title]);
 
-        return redirect(route('admin').'#partner');
+        return redirect(route('admin.partner').'#partner');
     }
     public function partner_delete(Request $request){
         $partner = DB::table('partner')->find($request->id);
@@ -42,6 +47,6 @@ class PartnerController extends Controller
 
         DB::table('partner')->where('id',$request->id)->delete();
 
-        return redirect(route('admin').'#partner');
+        return redirect(route('admin.partner').'#partner');
     }
 }

@@ -10,6 +10,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center flex-wrap" >
+                <div class="bg-danger text-white p-3">{{ $partners->count()==0?'No Sponsors. Contact for being sponsor of us':'' }}</div>
                 @foreach($partners as $partner)
                     <div class="card center  col-md-3 m-3">
                         <div class="card-body" style="background: #dbdad8">
@@ -18,6 +19,7 @@
                         </div>
                     </div>
                 @endforeach
+
             </div>
         </div>
     </section>

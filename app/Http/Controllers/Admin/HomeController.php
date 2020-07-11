@@ -23,9 +23,7 @@ class HomeController extends Controller
 
             $videos = DB::table('video')->get();
 
-            $partners = DB::table('partner')->get();
-
-            return view('admin.home',compact('sliders','notices','videos','partners'));
+            return view('admin.home',compact('sliders','notices','videos'));
         }
         else return redirect()->route('admin.login');
     }

@@ -1,9 +1,9 @@
 @extends('admin.index')
 
 @section('content')
-    <section class="help clearfix" id="partner">
+    <section class="help clearfix section-padding mt-5" id="partner">
         <div class="container pb-5">
-            <h2>Partner</h2>
+            <h2>SPONSORS</h2>
 
             @if (session()->has('partner_success'))
                 <div class="alert alert-success w-25">
@@ -29,6 +29,7 @@
                 </div>
                 <div  class="mt-2">
                     <hr class="m-1">
+                    <div class="text-danger">{{ $partners->count()==0?'No Sponsor Added':'' }}</div>
                     @foreach($partners as $partner)
                         <div class="col-md-12">
                             <div class="ImageContainer col-md-1 float-left">

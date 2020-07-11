@@ -44,17 +44,17 @@
     <div class="collapse navbar-collapse" style="transform: translateX(32%);" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/">HOME</a>
+                <a class="nav-link" href="{{ route('admin') }}">HOME</a>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="{{ route('admin.event') }}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     EVENT
                 </a>
                 <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Upcoming </a><hr>
-                    <a class="dropdown-item" href="#">On Going</a><hr>
-                    <a class="dropdown-item" href="#">Closed</a>
+                    <a class="dropdown-item" href="{{ route('admin.event').'#upcoming' }}">Upcoming </a><hr>
+                    <a class="dropdown-item" href="{{ route('admin.event').'#ongoing' }}">On Going</a><hr>
+                    <a class="dropdown-item" href="{{ route('admin.event').'#closed' }}">Closed</a>
                 </div>
             </li>
 
@@ -69,7 +69,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./html file/sponsor.html">CATEGORIES</a>
+                <a class="nav-link" href="{{ route('admin.partner') }}">SPONSORS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="./html file/sponsor.html">BLOG</a>
@@ -100,3 +100,5 @@
 <script src="../js/lightbox-plus-jquery.min.js"></script>
 </body>
 </html>
+
+

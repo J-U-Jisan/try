@@ -73,7 +73,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('sponsor') }}">SPONSORS</a>
+                <a class="nav-link" href="{{ route('partner') }}">SPONSORS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="./html file/sponsor.html">BLOG</a>

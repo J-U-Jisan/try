@@ -620,7 +620,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .card-full-body .card-slider .card .card-body .card-btn {
 	background-color: #00A78E;
-	transform: translate(50%);
+	transform: translate(47%);
 }
 .card-full-body .card-slider .card .card-body .card-title {
 	font-size: 19px;
@@ -638,7 +638,7 @@ h1, h2, h3, h4, h5, h6 {
 .card-slider .owl-nav button {
 	top: 50%;
 	position: absolute;
-	background: #00A78E none repeat scroll 0 0;
+	background: #00A78E none repeat scroll 0 0 !important;
 	width: 40px;
 	height: 60px;
 	text-align: center;

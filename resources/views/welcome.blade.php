@@ -151,56 +151,26 @@
     <section class="card-full-body mb-5 container clearfix">
         <div class="row section-title">
             <div class="col col-xs-12">
-                <h1><font>Latest</font> Projects</h1>
+                <h1><font>LATEST</font> Events</h1>
             </div>
         </div>
+     
 
         <div class="card-deck card-slider owl-carousel">
+            @foreach($ongoings as $ongoing)
             <div class="card">
-                <img class="card-img-top" src="./img/Lets-Fight-against-COVID-19-small.jpg" alt="Card image cap">
+                <img class="card-img-top w-100 h-50" src="{{ asset('storage/event/'.$ongoing->name) }}" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Lets Fight Against COVID-19</h5>
+                    <h5 class="card-title">{{ $ongoing->title }}</h5>
                     <p class="card-text">
                         Daily Iunch progrm, Disinfectant program, PPE for
                         medical personals, Hand sanitizes need your gener... <a href="#">Read more</a>
                     </p>
                     <a href="#" type="button" class="btn theme-btn card-btn text-center">Donate Now</a>
                 </div>
+            </div>
+            @endforeach
 
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="./img/Food-Basket-For-Ramadan-small.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">IFTAR Basket For Homelles</h5>
-                    <p class="card-text">1000,000 Ramadan Iftar-sehri
-                        Basket distribution that exactly we are
-                        planning to distribute food in t... <a href="#">Read more</a></p>
-                    <a href="#" type="button" class="btn theme-btn card-btn text-center">Donate Now</a>
-                </div>
-
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="./img/Zakat-for-Unemployed-Muslims-small.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Zakat For Unemployed Muslims</h5>
-                    <p class="card-text">Rehabilitation project for jobless hawkers and farmers
-                        badly needs your Zakat funnd Millions of smal... <a href="#">Read more</a>
-                    </p>
-                    <a href="#" type="button" class="btn theme-btn card-btn text-center">Donate Now</a>
-                </div>
-
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="./img/project_image.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">One Taka Meal</h5>
-                    <p class="card-text">
-                        A very new and unique program began by Bidyanondo is 'Ek Takay Ahar',
-                        which refers to 'food for a si... <a href="#">Read more</a>
-                    </p>
-                    <a href="#" type="button" class="btn theme-btn card-btn text-center">Donate Now</a>
-                </div>
-            </div>
         </div>
         <br><br><br>
         <button type="button" class="btn btn-projects-danger">VIEW ALL PROJECTS &nbsp; <i class="fas fa-long-arrow-alt-right"></i></button>
