@@ -28,11 +28,29 @@ class HomeController extends Controller
         else return redirect()->route('admin.login');
     }
 
+    public function password_change(Request $request){
+        if($request->password != $request->confirm){
+            $message = 'Password Mismatched';
+            return redirect()->route('admin')->withErrors($message);
+        }
+        else{
+            DB::table('admin')->where('id',1)->update(['password'=>$request->password]);
+
+            $message = 'Password Changed Successfully';
+            return redirect()->route('admin')->with('message',$message);
+        }
+    }
+
     public function slider(Request $request)
     {
         if($request->hasFile('slider')){
+            $slider = DB::table('slider')->get()->last();
+            if(isset($slider)){
+                $id= $slider->id;
+            }
+            $id = ($id ?? 0)  + 1;
 
-            $filename = $request->slider->getClientOriginalName();
+            $filename = 'slider' . $id . '.' . $request->slider->getClientOriginalExtension();
             $request->slider->storeAs('/public/slider',$filename);
 
             $data = array('name'=>$filename);
@@ -59,7 +77,15 @@ class HomeController extends Controller
     public function notice(Request $request){
         if($request->hasFile('notice')){
 
-            $filename = $request->notice->getClientOriginalName();
+            $notice = DB::table('notice')->get()->last();
+
+            if(isset($notice)){
+                $id= $notice->id;
+            }
+
+            $id = ($id ?? 0)  + 1;
+
+            $filename = 'notice' . $id . '.' . $request->notice->getClientOriginalExtension();
             $request->notice->storeAs('/public/notice',$filename);
 
             $data = array('title'=>$request->title,'name'=>$filename);
@@ -106,7 +132,7 @@ class HomeController extends Controller
             $extension = $infoPath['extension'];
 
             if($extension=='pdf')
-                 $response->header('Content-Type', 'application/pdf');
+                $response->header('Content-Type', 'application/pdf');
             else{
                 return Response::download($name, $data->name);
             }

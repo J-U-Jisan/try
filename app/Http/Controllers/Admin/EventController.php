@@ -6,32 +6,41 @@ use File;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class EventController extends Controller
 {
     public function index()
     {
-        $upcomings = DB::table("event")
-                    ->where('event',1)
-                    ->latest('id')->get();
+        if (Session::get('user') != '') {
+            $upcomings = DB::table("event")
+                ->where('event', 1)
+                ->latest('id')->get();
 
-        $ongoings = DB::table('event')
-                    ->where('event', 2)
-                    ->latest('id')->get();
+            $ongoings = DB::table('event')
+                ->where('event', 2)
+                ->latest('id')->get();
 
-        $closed_list = DB::table('event')
-            ->where('event',3)
-            ->latest('id')
-            ->paginate(3);
+            $closed_list = DB::table('event')
+                ->where('event', 3)
+                ->latest('id')
+                ->paginate(3);
 
-        return view('admin.event',compact('upcomings','ongoings','closed_list'));
+            return view('admin.event', compact('upcomings', 'ongoings', 'closed_list'));
+        }
+        else return redirect()->route('admin.login');
     }
 
     public function upcoming(Request $request)
     {
         if($request->hasFile('event')){
+            $event = DB::table('event')->get()->last();
+            if(isset($event)){
+                $id= $event->id;
+            }
+            $id = ($id ?? 0)  + 1;
 
-            $filename = $request->event->getClientOriginalName();
+            $filename = 'event' . $id . '.' . $request->event->getClientOriginalExtension();
             $request->event->storeAs('/public/event',$filename);
 
             $data = array('name'=>$filename,'title'=>$request->title, 'details'=>$request->details,'event'=>1);
@@ -76,7 +85,13 @@ class EventController extends Controller
     {
         if($request->hasFile('event')){
 
-            $filename = $request->event->getClientOriginalName();
+            $event = DB::table('event')->get()->last();
+            if(isset($event)){
+                $id= $event->id;
+            }
+            $id = ($id ?? 0)  + 1;
+
+            $filename = 'event' . $id . '.' . $request->event->getClientOriginalExtension();
             $request->event->storeAs('/public/event',$filename);
 
             $data = array('name'=>$filename,'title'=>$request->title, 'details'=>$request->details,'event'=>2);

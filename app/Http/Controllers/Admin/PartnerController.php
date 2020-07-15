@@ -6,18 +6,27 @@ use File;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class PartnerController extends Controller
 {
     public function index()
     {
-        $partners = DB::table('partner')->get();
-        return view('admin.sponsor',compact('partners'));
+        if (Session::get('user') != '') {
+            $partners = DB::table('partner')->get();
+            return view('admin.sponsor', compact('partners'));
+        }
+        else return redirect()->route('admin.login');
     }
     public function partner(Request $request){
         if($request->hasFile('logo')){
+            $partner = DB::table('partner')->get()->last();
+            if(isset($partner)){
+                $id= $partner->id;
+            }
+            $id = ($id ?? 0)  + 1;
 
-            $filename = $request->logo->getClientOriginalName();
+            $filename = 'partner' . $id . '.' . $request->logo->getClientOriginalExtension();
             $request->logo->storeAs('/public/partner',$filename);
 
             $data = array('title'=>$request->title,'name'=>$filename);

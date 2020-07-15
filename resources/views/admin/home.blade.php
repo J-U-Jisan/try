@@ -1,8 +1,28 @@
 @extends('admin.index')
 
 @section('content')
+
 <section class="help clearfix section-padding mt-5" id="slider">
     <div class="container">
+        <div class="mb-5">
+            <h4>Change Password:</h4>
+            @if (session()->has('message'))
+                <div class="alert alert-success col-md-4 pl-4">
+                    <strong>{{ session('message') }}</strong>
+                </div>
+            @endif
+            <form method="POST" action="{{ route('admin.password.change') }}">
+                @csrf
+
+                <label>New Password: </label>
+                <input type="password" name="password" class="form-control col-md-4 pl-2" placeholder="Enter New Password" required>
+
+                <label>Confirm Password: </label>
+                <input type="password" name="confirm" class="form-control col-md-4 pl-2" placeholder="Confirm Password" required>
+                <div class="text-danger font-weight-bold">{{ $errors->first() }}</div>
+                <input type="submit" class="form-control col-md-2 btn btn-danger mt-4">
+            </form>
+        </div>
         <h2>Slider Image Selection</h2>
 
         @if (session()->has('slider_success'))

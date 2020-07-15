@@ -1,41 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Try</title>
-    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style1.css">
-    <link rel="stylesheet" href="../css/lightbox.min.css">
-    <style>
-        .title-try{
-            color: black;
-            font-style: italic;
-            font-family: cursive;
-            font-size: 20px;
-            position: relative;
-            transform: translateY(12px);
-            display: inline-flex;
-        }
-        @media (max-width: 575.98px) {
-            .title-try{
-                color: black;
-                font-style: italic;
-                font-family: cursive;
-                font-size: 10px;
-                position: relative;
-                transform: translateY(10px);
-                display: inline-flex;
-            }
-        }
-    </style>
-</head>
+
+@include('head')
+
 <body style="background: #e4e7e7">
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="../index.html">
-        <img src="../images/logo.png" alt="Try" class="col-7 col-md-4">
+    <a class="navbar-brand" href="{{ route('admin') }}">
+        <img src="{{ asset('images/logo.png') }}" alt="Try" class="col-7 col-md-4">
         <span class="title-try">Be the reason someone smiles today</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,8 +53,7 @@
 
                 <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">History</a><hr>
-                    <a class="dropdown-item" href="#">Mission & Vission</a><hr>
-                    <a class="dropdown-item" href="#">Member</a><hr>
+                    <a class="dropdown-item" href="{{ route('admin.member') }}">Member</a><hr>
                     <a class="dropdown-item" href="#work">How it works</a>
                 </div>
             </li>
@@ -95,9 +66,7 @@
 
 @yield('content')
 
-<script src="../js/jquery-3.2.1.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/lightbox-plus-jquery.min.js"></script>
+@include('script')
 </body>
 </html>
 

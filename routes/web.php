@@ -29,6 +29,7 @@ Route::group(['prefix'  =>  'admin'], function () {
     })->name('admin.login');
 
     Route::get('/','Admin\HomeController@index')->name('admin');
+    Route::post('/password','Admin\HomeController@password_change')->name('admin.password.change');
 
     Route::post('/slider','Admin\HomeController@slider')->name('admin.slider');
     Route::delete('/slider','Admin\HomeController@slider_delete')->name('admin.slider.delete');
@@ -52,7 +53,12 @@ Route::group(['prefix'  =>  'admin'], function () {
     Route::post('/event/ongoing','Admin\EventController@ongoing')->name("admin.event.ongoing");
     Route::put('/event/ongoing','Admin\EventController@ongoing_action')->name("admin.event.ongoing");
     Route::delete('/event/closed','Admin\EventController@closed')->name("admin.event.closed");
+
+    Route::get('/member','Admin\MemberController@index')->name('admin.member');
+    Route::post('/member','Admin\MemberController@create')->name('admin.member');
+    Route::put('/member','Admin\MemberController@action')->name('admin.member.action');
 });
 
 Route::get('/partner', 'GuestController@partner')->name('partner');
-
+Route::get('event/{id}','GuestController@event_view')->name('event.view');
+Route::get('/event','GuestController@event')->name('event');

@@ -85,7 +85,7 @@
         .login_btn{
             color: black;
             background-color: #FFC312;
-            width: 100px;
+            width: 100%;
         }
 
         .login_btn:hover{
@@ -106,8 +106,8 @@
 <div class="container">
     <div class="d-flex justify-content-center h-100">
         <div class="card">
-            <div class="card-header text-center">
-                <h3>Sign In</h3>
+            <<div class="card-header text-center">
+                <img src="{{ asset('/images/logo.png') }}" class="img-fluid col-md-5">
             </div>
             <div class="card-body">
                 <form action="{{ route('admin.login') }}" method="POST">
@@ -117,14 +117,14 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="username" name="user">
+                        <input type="text" class="form-control" placeholder="username" name="user" required>
 
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="password" name="password">
+                        <input type="password" class="form-control" placeholder="password" name="password" required>
                     </div>
 
                     <div class="form-group text-center mt-5">

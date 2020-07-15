@@ -11,7 +11,7 @@
                 </div>
             @endif
             @if (session()->has('event_fail'))
-                <div class="alert alert-danger w-25">
+                <div class="alert alert-danger w-75">
                     <strong>{{ session('event_fail') }}</strong>
                 </div>
             @endif
@@ -83,7 +83,7 @@
                     </div>
                 @endif
                 @if (session()->has('ongoing_fail'))
-                    <div class="alert alert-danger w-25">
+                    <div class="alert alert-danger w-75">
                         <strong>{{ session('ongoing_fail') }}</strong>
                     </div>
                 @endif

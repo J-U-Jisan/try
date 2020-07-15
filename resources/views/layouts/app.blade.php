@@ -7,8 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Try</title>
 
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -18,13 +19,37 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .title-try{
+            color: black;
+            font-style: italic;
+            font-family: cursive;
+            font-size: 20px;
+            position: relative;
+            transform: translateY(12px);
+            display: inline-flex;
+        }
+        @media (max-width: 575.98px) {
+            .title-try{
+                color: black;
+                font-style: italic;
+                font-family: cursive;
+                font-size: 10px;
+                position: relative;
+                transform: translateY(10px);
+                display: inline-flex;
+            }
+        }
+
+    </style>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{ route('welcome') }}">
+                    <img src="{{ asset('images/logo.png') }}" alt="Try" class="col-4 col-md-2 img-fluid">
+                    <span class="title-try">Be the reason someone smiles today</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
