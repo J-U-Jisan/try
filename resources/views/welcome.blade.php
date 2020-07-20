@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <div id="carouselExampleIndicators" class="carousel slide col-md-9" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide col-md-12" data-ride="carousel">
             <ol class="carousel-indicators">
                 <?php $cnt=0; ?>
                 @foreach($sliders as $slider)
@@ -17,6 +17,9 @@
 
                     <div class="carousel-item {{ $cnt!=1?'': 'active' }}">
                         <img class="d-block w-100 slider-h" src="{{ asset('storage/slider/'.$slider->name) }}">
+                        <div class="carousel-caption d-none d-md-block">
+                            <button type="button" class="btn btn-donate-hero font-weight-bold px-5 py-2" data-toggle="modal" data-target="#exampleModalCenter">DONATE</button>
+                        </div>
                     </div>
                 @endforeach
 
@@ -29,20 +32,6 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-        </div>
-        <div class="col-md-3 mt-5">
-            <div class="p-4"></div>
-            <div class="card notice border-info">
-                <div class="card-header text-center bg-success text-white">
-                    Notice
-                </div>
-                <div class="card-body" style="overflow: auto;">
-                    @foreach($notices as $notice)
-                        <p class="card-text text-center"><a target="_blank" href="{{ route('admin.notice.view',['id'=>$notice->id]) }}">{{ $notice->title }}</a></p>
-                        <hr>
-                    @endforeach
-                </div>
-            </div>
         </div>
     </div>
     <main class="">
@@ -134,15 +123,17 @@
         <section id="jon-us-cta" class="cta-2">
             <div class="container-fluid">
                 <div class="row">
-                    <div id="join-us" class="col-12 col-md-5 col-sm-4 join-us" style="background: rgba(0, 0, 0, 0) url(./img/bidyanondo-home_volunteer_image.jpg) no-repeat local center center / cover; height: 480px;">
-                        <span>Join us</span>
+                    <div id="join-us" class="col-12 col-md-5 col-sm-4 join-us"
+                         style="background: url({{ asset('images/join.jpg') }}) center center / cover no-repeat local;
+    height: 474px;">
+                        <span style="font-size: 30px;">Join us</span>
                         <div class="dark-overlay"></div>
                     </div>
                     <div class="col-12 col-md-7 col-sm-8 sing-up wow fadeInRightSlow" style="visibility: visible; animation-name: fadeInRightSlow;">
                         <h3>Registration for volunteer program</h3>
                         <span>Serve the humanity</span>
                         <p>Our opportunity to volunteer to inspire a nation extends from the work of the Office to the grassroots personnel stage. If you have a commitment to time and work as a marginalized community, we are waiting to welcome you to our team.</p>
-                        <button type="button" class="btn btn-outline-danger">REGISTRATION</button>
+                        <button type="button" class="btn btn-outline-danger" onclick="window.location.href='{{ route('volunteer') }}'">REGISTRATION</button>
                     </div>
                 </div>
             </div>

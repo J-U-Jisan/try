@@ -82,6 +82,7 @@
                         </form>
                     </div>
                 @endforeach
+                {{ $members->render() }}
             </div>
         </div>
     </section>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Mail\VolunteerApprovalMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Response;
 use File;
 use App\Http\Controllers\Controller;
@@ -19,11 +21,19 @@ class HomeController extends Controller
 
             $sliders = DB::table('slider')->get();
 
-            $notices = Db::table('notice')->get();
-
             $videos = DB::table('video')->get();
 
-            return view('admin.home',compact('sliders','notices','videos'));
+            $approval_list = DB::table('volunteer')
+                            ->where('approve',0)
+                            ->paginate(5,['*'], 'approval');
+
+            $volunteer_list = DB::table('volunteer')
+                    ->where('approve',1)
+                    ->paginate(5,['*'], 'volunteer');
+
+            $contact_list = DB::table('footer')->get();
+
+            return view('admin.home',compact('sliders','videos','approval_list','volunteer_list','contact_list'));
         }
         else return redirect()->route('admin.login');
     }
@@ -74,74 +84,6 @@ class HomeController extends Controller
         return redirect(route('admin').'#slider');
     }
 
-    public function notice(Request $request){
-        if($request->hasFile('notice')){
-
-            $notice = DB::table('notice')->get()->last();
-
-            if(isset($notice)){
-                $id= $notice->id;
-            }
-
-            $id = ($id ?? 0)  + 1;
-
-            $filename = 'notice' . $id . '.' . $request->notice->getClientOriginalExtension();
-            $request->notice->storeAs('/public/notice',$filename);
-
-            $data = array('title'=>$request->title,'name'=>$filename);
-
-            DB::table('notice')->insert($data);
-
-            $notice_success = 'Notice Uploaded Successfully';
-            return redirect(route('admin').'#notice')->with('notice_success',$notice_success);
-        }
-        $notice_fail = 'Notice Upload Failed';
-        return redirect(route('admin').'#notice')->with('notice_fail',$notice_fail);
-    }
-
-    public function notice_edit(Request $request){
-        DB::table('notice')
-            ->where('id',$request->id)
-            ->update(['title'=>$request->title]);
-
-        return redirect(route('admin').'#notice');
-    }
-
-    public function notice_delete(Request $request){
-        $notice = DB::table('notice')->find($request->id);
-        $name = $notice->name;
-        $directory = 'storage/notice/'.$name;
-
-        File::delete($directory);
-
-        DB::table('notice')->where('id',$request->id)->delete();
-
-        return redirect(route('admin').'#notice');
-    }
-
-    public function notice_view($id){
-        $data = DB::table('notice')->where('id',$id)->first();
-        $name = 'storage/notice/'.$data->name;
-        if (File::isFile($name))
-        {
-            $file = File::get($name);
-
-            $response = Response::make($file, 200);
-
-            $infoPath = pathinfo(public_path($name));
-            $extension = $infoPath['extension'];
-
-            if($extension=='pdf')
-                $response->header('Content-Type', 'application/pdf');
-            else{
-                return Response::download($name, $data->name);
-            }
-
-            return $response;
-        }
-        return redirect(route('admin').'#notice');
-    }
-
     public function video(Request $request){
         if(isset($request->submit)){
 
@@ -162,5 +104,53 @@ class HomeController extends Controller
     public function video_delete(Request $request){
         DB::table('video')->where('id',$request->id)->delete();
         return redirect(route('admin').'#video');
+    }
+
+    public function approve_action(Request $request){
+        if(isset($request->approve)){
+            DB::table('volunteer')->where('id',$request->id)->update(['approve'=>1]);
+
+            $details = [
+              'title'=>'Approval From Try',
+                'body'=>'Congratulations, now you are one of us. We approved you as a volunteer of TRY.',
+                'pathToImage' => public_path()."/images/logo.png"
+            ];
+            Mail::to($request->email)->send(new VolunteerApprovalMail($details));
+        }
+        else if(isset($request->decline)){
+            DB::table('volunteer')->where('id',$request->id)->delete();
+        }
+        return redirect(route('admin').'#approve');
+    }
+
+    public function volunteer_delete(Request $request){
+        DB::table('volunteer')->where('id',$request->id)->delete();
+
+        return redirect(route('admin').'#volunteer');
+    }
+
+    public function footer(Request $request){
+        $cnt = DB::table('footer')->count();
+
+        if($cnt<2){
+            $data = array('mobile'=>$request->mobile,'email'=>$request->email);
+            DB::table('footer')->insert($data);
+
+            return redirect(route('admin').'#footer');
+        }
+        else{
+            return redirect(route('admin').'#footer')->with('footerFail','Already Added 2 Number');
+        }
+    }
+    public function footer_action(Request $request){
+        if(isset($request->edit)){
+            DB::table('footer')->where('id',$request->id)
+                                    ->update(['mobile'=>$request->mobile,'email'=>$request->email]);
+        }
+        else{
+            DB::table('footer')->where('id',$request->id)
+                                    ->delete();
+        }
+        return redirect(route('admin').'#footer');
     }
 }

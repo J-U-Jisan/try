@@ -11,7 +11,8 @@ class MemberController extends Controller
 {
     public function index()
     {
-        $members  = DB::table('member')->get();
+        $members  = DB::table('member')
+            ->paginate(5,['*'], 'member');
         return view('admin.member',compact('members'));
     }
 

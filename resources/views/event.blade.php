@@ -14,24 +14,22 @@
                     <p class="text-success"><button class="btn btn-success">Donate</button> more, so that we can arrange more event.</p>
                 </div>
             @endif
-            <div class="event-list d-flex justify-content-center flex-wrap" >
+            <div class="d-flex justify-content-center flex-wrap" >
                 @foreach($upcomings as $upcoming)
-                    <div class="card col-md-4" style="background: #bde0e0">
-                        <div class="img">
-                            <img src="{{ asset('storage/event/'.$upcoming->name) }}" alt="Card image cap">
-                        </div>
+                    <div class="card m-2" style="width: 21rem; background: #bde0e0;">
+                        <img class="card-img-top" style="height: 220px;" src="{{ asset('storage/event/'.$upcoming->name) }}" alt="Card image cap">
 
-                        <div class="content">
-                            <div class="title">{{ $upcoming->title }}</div>
-                            <p>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $upcoming->title }}</h5>
+                            <p class="card-text">
                                 {{ \Illuminate\Support\Str::limit($upcoming->details, 100, '...') }}
                                 @if (strlen($upcoming->details) > 100)
                                     <a href="{{ route('event.view',[$upcoming->id]) }}">
                                         <span id="dots">Read more</span></a>
                                 @endif
                             </p>
-                            <div class="btn">
-                                <button class="btn-dark">Donate Now</button>
+                            <div class="card-text text-center p-3">
+                                <button class="btn btn-dark event">Donate Now</button>
                             </div>
 
                         </div>
@@ -54,23 +52,21 @@
                     <p class="text-success"><button class="btn btn-success">Donate</button> more, so that we can arrange more event.</p>
                 </div>
             @endif
-            <div class="event-list d-flex justify-content-center flex-wrap" >
+            <div class="d-flex justify-content-center flex-wrap" >
                 @foreach($ongoings as $ongoing)
-                    <div class="card col-md-4" style="background: #2efa8e">
-                        <div class="img">
-                            <img src="{{ asset('storage/event/'.$ongoing->name) }}" alt="Card image cap">
-                        </div>
-                        <div class="content">
-                            <div class="title">{{ $upcoming->title }}</div>
-                            <p>
+                    <div class="card m-2" style="width: 21rem; background: #2efa8e;">
+                        <img class="card-img-top" style="height: 220px;" src="{{ asset('storage/event/'.$ongoing->name) }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $ongoing->title }}</h5>
+                            <p class="card-text">
                                 {{ \Illuminate\Support\Str::limit($ongoing->details, 100, '...') }}
-                                @if (strlen($upcoming->details) > 100)
+                                @if (strlen($ongoing->details) > 100)
                                     <a href="{{ route('event.view',[$ongoing->id]) }}">
                                         <span id="dots">Read more</span></a>
                                 @endif
                             </p>
-                            <div class="btn">
-                                <button class="btn-dark">Donate Now</button>
+                            <div class="card-text text-center p-3">
+                                <button class="btn btn-dark event">Donate Now</button>
                             </div>
 
                         </div>
@@ -93,23 +89,21 @@
                     <p class="text-success"><button class="btn btn-success">Donate</button> more, so that we can arrange more event.</p>
                 </div>
             @endif
-            <div class="event-list d-flex justify-content-center flex-wrap" >
+            <div class="d-flex justify-content-center flex-wrap" >
                 @foreach($closed_list as $closed)
-                    <div class="card col-md-4" style="background: #aee7c9">
-                        <div class="img">
-                            <img src="{{ asset('storage/event/'.$closed->name) }}" alt="Card image cap">
-                        </div>
-                        <div class="content">
-                            <div class="title">{{ $closed->title }}</div>
-                            <p>
+                    <div class="card m-2" style="width: 21rem;background: #aee7c9;">
+                        <img class="card-img-top" style="height: 220px;" src="{{ asset('storage/event/'.$closed->name) }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $closed->title }}</h5>
+                            <p class="card-text">
                                 {{ \Illuminate\Support\Str::limit($closed->details, 100, '...') }}
                                 @if (strlen($closed->details) > 100)
                                     <a href="{{ route('event.view',[$closed->id]) }}">
                                         <span id="dots">Read more</span></a>
                                 @endif
                             </p>
-                            <div class="btn">
-                                <button class="btn-dark">Donate Now</button>
+                            <div class="card-text text-center p-3">
+                                <button class="btn btn-dark event">Donate Now</button>
                             </div>
 
                         </div>

@@ -5,14 +5,14 @@
 
     <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset( 'css/bootstrap.min.css') }}">
+
     <link rel="stylesheet" href="{{ asset( 'css/style1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/lightbox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fontawesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}">
-
-    <style>
+        <style>
         .title-try{
             color: black;
             font-style: italic;
@@ -33,6 +33,5 @@
                 display: inline-flex;
             }
         }
-
     </style>
 </head>

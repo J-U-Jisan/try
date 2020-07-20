@@ -34,13 +34,14 @@ Route::group(['prefix'  =>  'admin'], function () {
     Route::post('/slider','Admin\HomeController@slider')->name('admin.slider');
     Route::delete('/slider','Admin\HomeController@slider_delete')->name('admin.slider.delete');
 
-    Route::post('/notice','Admin\HomeController@notice')->name('admin.notice');
-    Route::delete('/notice','Admin\HomeController@notice_delete')->name('admin.notice.delete');
-    Route::put('/notice','Admin\HomeController@notice_edit')->name('admin.notice.edit');
-    Route::get('/notice/{id}','Admin\HomeController@notice_view')->name('admin.notice.view');
-
     Route::post('/video','Admin\HomeController@video')->name('admin.video');
     Route::delete('/video','Admin\HomeController@video_delete')->name('admin.video.delete');
+
+    Route::post('/volunteer/approve','Admin\HomeController@approve_action')->name('admin.volunteer.action');
+    Route::delete('/volunteer/delete','Admin\HomeController@volunteer_delete')->name('admin.volunteer.delete');
+
+    Route::post('/footer','Admin\HomeController@footer')->name('admin.footer');
+    Route::put('/footer','Admin\HomeController@footer_action');
 
     Route::get('/partner','Admin\PartnerController@index')->name('admin.partner');
     Route::post('/partner','Admin\PartnerController@partner')->name('admin.partner');
@@ -62,3 +63,8 @@ Route::group(['prefix'  =>  'admin'], function () {
 Route::get('/partner', 'GuestController@partner')->name('partner');
 Route::get('event/{id}','GuestController@event_view')->name('event.view');
 Route::get('/event','GuestController@event')->name('event');
+Route::get('/member','GuestController@member')->name('member');
+Route::get('/contact','GuestController@contact')->name('contact');
+Route::post('/contact','GuestController@contact_mail');
+Route::get('/volunteer/registration','GuestController@volunteer')->name('volunteer');
+Route::post('/volunteer/registration','GuestController@volunteer_store');

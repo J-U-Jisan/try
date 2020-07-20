@@ -34,10 +34,10 @@ class PartnerController extends Controller
             DB::table('partner')->insert($data);
 
             $partner_success = 'Partner Added Successfully';
-            return redirect(route('admin').'#partner')->with('partner_success',$partner_success);
+            return redirect(route('admin.partner'))->with('partner_success',$partner_success);
         }
         $partner_fail = 'Partner Upload Failed';
-        return redirect(route('admin.partner').'#partner')->with('partner_fail',$partner_fail);
+        return redirect(route('admin.partner'))->with('partner_fail',$partner_fail);
     }
 
     public function partner_edit(Request $request){
@@ -56,6 +56,6 @@ class PartnerController extends Controller
 
         DB::table('partner')->where('id',$request->id)->delete();
 
-        return redirect(route('admin.partner').'#partner');
+        return redirect(route('admin.partner'));
     }
 }
