@@ -23,7 +23,7 @@
             $length = strlen(Auth::user()->name);
         ?>
     @endguest
-    <div class="collapse navbar-collapse" style="transform: {{ $length>10?'translateX(25%)':'translateX(35%)' }};" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse" style="transform: {{ $length>10?'translateX(25%)':'translateX(30%)' }};" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('welcome') }}">HOME</a>
@@ -39,12 +39,15 @@
                     <a class="dropdown-item" href="{{ route('event').'#closed' }}">Closed</a>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('donation') }}">DONATION</a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('partner') }}">SPONSORS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./html file/sponsor.html">BLOG</a>
+                <a class="nav-link" href="{{ route('blog') }}">BLOG</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -58,9 +61,6 @@
                     <a class="dropdown-item" href="#work">How it works</a>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
-            </li>
             @guest
             <li class="nav-item">
                 <button class="border-dark bg-transparent"><a class="nav-link" href="{{ route('login') }}">Sign In</a></button>
@@ -71,7 +71,7 @@
                         {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Dashboard</a><hr>
+                        <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a><hr>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">

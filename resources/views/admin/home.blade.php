@@ -169,7 +169,7 @@
                 <div class="col-md-3 float-left ml-5 mt-5 pt-5">
                     <div class="form-row">
                         <input type="submit" name="approve" value="Approve" class="form-control btn btn-outline-dark col-md-5">
-                        <input type="submit" name="decline" value="Decline" class="ml-1 form-control btn btn-outline-danger col-md-5">
+                        <input type="submit" name="decline" value="Decline" class="ml-1 form-control btn btn-outline-danger col-md-5" onclick="if (!confirm('Are you sure?')) { return false }">
                     </div>
                 </div>
             </form>
@@ -230,7 +230,7 @@
                     </div>
                     <div class="col-md-3 float-left ml-5 mt-5 pt-5">
                         <div class="form-row">
-                            <input type="submit" name="delete" value="Delete" class="ml-1 form-control btn btn-outline-danger col-md-5">
+                            <input type="submit" name="delete" value="Delete" class="ml-1 form-control btn btn-outline-danger col-md-5" onclick="if (!confirm('Are you sure?')) { return false }">
                         </div>
                     </div>
                 </form>
@@ -276,7 +276,7 @@
                     </div>
                    <div class="col-md-5 float-left my-5">
                        <input type="submit" name="edit" value="EDIT" class="form-control col-md-2 btn btn-outline-dark">
-                       <input type="submit" name="delete" value="DELETE" class="form-control col-md-2 btn btn-outline-danger ml-3">
+                       <input type="submit" name="delete" value="DELETE" class="form-control col-md-2 btn btn-outline-danger ml-3" onclick="if (!confirm('Are you sure?')) { return false }">
                    </div>
                </form>
             </div>

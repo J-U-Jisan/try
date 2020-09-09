@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('content')
-    <section class="clearfix section-padding">
+    <section class="clearfix section-padding" style="background: #e5e7e6">
         <div class="container">
             <div class="d-flex justify-content-center flex-wrap">
                 @foreach($members as $member)

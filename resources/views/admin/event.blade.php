@@ -22,8 +22,10 @@
                 <lable>Select Image:</lable>
                 <input class="form-control p-1" type="file" name="event" accept="image/*" required>
                 <label>Description about event:</label>
-                <textarea name="details" class="form-control" rows="8" required placeholder="Enter description about event"></textarea>
-
+                <textarea name="details" id="upcoming_event" class="form-control" rows="8" required placeholder="Enter description about event"></textarea>
+                <script type="text/javascript">
+                    CKEDITOR.replace( 'upcoming_event' );
+                </script>
                 <input type="submit" class="form-control btn-success col-md-2 mt-2" value="POST">
             </form>
             </div>
@@ -51,7 +53,10 @@
                                 </div>
                             </div>
                             <div class="col-md-10 mt-3">
-                                <textarea class="form-control" rows="7" name="details">{{ $upcoming->details }}</textarea>
+                                <textarea class="form-control" rows="7" name="details" id="upcoming{{ $upcoming->id }}">{{ $upcoming->details }}</textarea>
+                                <script type="text/javascript">
+                                    CKEDITOR.replace( 'upcoming{{ $upcoming->id }}' );
+                                </script>
                             </div>
                         </div>
 
@@ -60,7 +65,7 @@
                                 <input type="submit" name="edit" value="EDIT" class="form-control btn btn-success">
                             </div>
                             <div class="col-md-3 m-1 float-left">
-                                <input type="submit" name="delete" value="DELETE" class="form-control btn btn-danger">
+                                <input type="submit" name="delete" value="DELETE" class="form-control btn btn-danger" onclick="if (!confirm('Are you sure?')) { return false }">
                             </div>
                             <div class="col-md-6 m-1 float-left">
                                 <input type="submit" name="event" value="Mark as ON-GOING" class="form-control btn btn-dark">
@@ -94,8 +99,10 @@
                     <lable>Select Image:</lable>
                     <input class="form-control p-1" type="file" name="event" accept="image/*" required>
                     <label>Description about event:</label>
-                    <textarea name="details" class="form-control" rows="8" required placeholder="Enter description about event"></textarea>
-
+                    <textarea name="details" id="ongoing_event" class="form-control" rows="8" required placeholder="Enter description about event"></textarea>
+                    <script type="text/javascript">
+                        CKEDITOR.replace( 'ongoing_event' );
+                    </script>
                     <input type="submit" class="form-control btn-success col-md-2 mt-2" value="POST">
                 </form>
             </div>
@@ -123,7 +130,10 @@
                                 </div>
                             </div>
                             <div class="col-md-10 mt-3">
-                                <textarea class="form-control" rows="7" name="details">{{ $ongoing->details }}</textarea>
+                                <textarea class="form-control" id="ongoing{{ $ongoing->id }}" rows="7" name="details">{{ $ongoing->details }}</textarea>
+                                <script type="text/javascript">
+                                    CKEDITOR.replace( 'ongoing{{ $ongoing->id }}' );
+                                </script>
                             </div>
                         </div>
 
@@ -132,7 +142,7 @@
                                 <input type="submit" name="edit" value="EDIT" class="form-control btn btn-success">
                             </div>
                             <div class="col-md-3 m-1 float-left">
-                                <input type="submit" name="delete" value="DELETE" class="form-control btn btn-danger">
+                                <input type="submit" name="delete" value="DELETE" class="form-control btn btn-danger" onclick="if (!confirm('Are you sure?')) { return false }">
                             </div>
                             <div class="col-md-6 m-1 float-left">
                                 <input type="submit" name="event" value="Mark as CLOSED" class="form-control btn btn-dark">
@@ -171,12 +181,15 @@
                                 </div>
                             </div>
                             <div class="col-md-10 mt-3">
-                                <textarea class="form-control" rows="7" name="details" readonly>{{ $closed->details }}</textarea>
+                                <textarea class="form-control" id="closed{{ $closed->id }}" rows="7" name="details" readonly>{{ $closed->details }}</textarea>
+                                <script type="text/javascript">
+                                    CKEDITOR.replace( 'closed{{ $closed->id }}' );
+                                </script>
                             </div>
                         </div>
 
                         <div class="col-md-2 m-5 p-5 float-left">
-                            <input type="submit" name="delete" value="DELETE" class="form-control btn btn-danger">
+                            <input type="submit" name="delete" value="DELETE" class="form-control btn btn-danger" onclick="if (!confirm('Are you sure?')) { return false }">
                         </div>
                     </form>
                 </div>

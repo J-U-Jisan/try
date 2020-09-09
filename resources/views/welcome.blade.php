@@ -18,7 +18,7 @@
                     <div class="carousel-item {{ $cnt!=1?'': 'active' }}">
                         <img class="d-block w-100 slider-h" src="{{ asset('storage/slider/'.$slider->name) }}">
                         <div class="carousel-caption d-none d-md-block">
-                            <button type="button" class="btn btn-donate-hero font-weight-bold px-5 py-2" data-toggle="modal" data-target="#exampleModalCenter">DONATE</button>
+                            <button onclick="window.location.href='{{ route('donation') }}'" type="button" class="btn btn-donate-hero font-weight-bold px-4 py-2" data-toggle="modal" data-target="#exampleModalCenter">DONATE</button>
                         </div>
                     </div>
                 @endforeach
@@ -36,7 +36,7 @@
     </div>
     <main class="">
         <section class="clearfix">
-            <div class="container-fluid pt-5 pb-5" style="background: #d4d3d3">
+            <div class="container-fluid pt-5 pb-5" style="background: #e5e7e6;">
                 <h3 class="text-center">Thoughts About Try</h3>
                 <div class="row mt-5">
                     @foreach($videos as $video)
@@ -101,7 +101,7 @@
                         <div class="content">
                             <div class="title">{{ $event->title }}</div>
 
-                            <p>{{ \Illuminate\Support\Str::limit($event->details, 100, '...') }}
+                            <p>{!! \Illuminate\Support\Str::limit($event->details, 100, '...') !!}
                                 @if (strlen($event->details) > 100)
                                     <a href="{{ route('event.view',[$event->id]) }}">
                                         <span id="dots">Read more</span></a>
@@ -109,14 +109,14 @@
                             </p>
                         </div>
                         <div class="btn">
-                            <button>Donate Now</button>
+                            <button onclick="window.location.href='{{ route('donation') }}'">Donate Now</button>
                         </div>
                     </div>
                 @endforeach
             </div>
 
             <br><br><br>
-            <button onclick="window.location.href='{{ route('event') }}'" type="button" class="btn btn-projects-danger">VIEW ALL PROJECTS &nbsp; <i class="fas fa-long-arrow-alt-right"></i></button>
+            <button onclick="window.location.href='{{ route('event') }}'" type="button" class="btn btn-projects-danger">VIEW ALL EVENTS &nbsp; <i class="fas fa-long-arrow-alt-right"></i></button>
             <br><br>
         </section>
 

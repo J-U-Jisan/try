@@ -51,7 +51,7 @@ class EventController extends Controller
             return redirect(route('admin.event').'#upcoming')->with('event_success',$event_success);
         }
         $event_fail = 'Event Upload Failed';
-        return redirect(route('admin.event').'#upcoming')->with('slider_fail',$event_fail);
+        return redirect(route('admin.event').'#upcoming')->with('event_fail',$event_fail);
     }
 
     public function upcoming_action(Request $request){

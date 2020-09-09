@@ -13,7 +13,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" style="transform: translateX(45%);" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse" style="transform: translateX(33%);" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin') }}">HOME</a>
@@ -29,12 +29,14 @@
                     <a class="dropdown-item" href="{{ route('admin.event').'#closed' }}">Closed</a>
                 </div>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.donation') }}">DONATION</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.partner') }}">SPONSORS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./html file/sponsor.html">BLOG</a>
+                <a class="nav-link" href="{{ route('admin.blog') }}">BLOG</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -12,12 +12,10 @@
                         <h2>{{ $event->title }}</h2>
                     </div>
                     <div class="col-md-3 float-right">
-                        <button class="form-control btn btn-success font-weight-bold">Donate Now</button>
+                        <button onclick="window.location.href='{{ route('donation') }}'" class="form-control btn btn-success font-weight-bold">Donate Now</button>
                     </div>
                     <div class="mt-5 ml-5 pt-5">
-                        <h3 class="">
-                            <small>{{ $event->details }}</small>
-                        </h3>
+                        {!! $event->details !!}
                     </div>
                 </div>
             </div>

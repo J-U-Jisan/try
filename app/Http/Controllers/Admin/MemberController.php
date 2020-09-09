@@ -6,14 +6,18 @@ use File;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class MemberController extends Controller
 {
     public function index()
     {
-        $members  = DB::table('member')
-            ->paginate(5,['*'], 'member');
-        return view('admin.member',compact('members'));
+        if (Session::get('user') != '') {
+            $members = DB::table('member')
+                ->paginate(5, ['*'], 'member');
+            return view('admin.member', compact('members'));
+        }
+        else return redirect()->route('admin.login');
     }
 
     public function create(Request $request){

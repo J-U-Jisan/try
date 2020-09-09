@@ -75,7 +75,7 @@
                                     <input type="submit" name="edit" value="EDIT" class="form-control btn btn-success">
                                 </div>
                                 <div class="col-md-3 m-1 float-left">
-                                    <input type="submit" name="delete" value="DELETE" class="form-control btn btn-danger">
+                                    <input type="submit" name="delete" value="DELETE" class="form-control btn btn-danger" onclick="if (!confirm('Are you sure?')) { return false }">
                                 </div>
                             </div>
 

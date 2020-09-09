@@ -58,6 +58,20 @@ Route::group(['prefix'  =>  'admin'], function () {
     Route::get('/member','Admin\MemberController@index')->name('admin.member');
     Route::post('/member','Admin\MemberController@create')->name('admin.member');
     Route::put('/member','Admin\MemberController@action')->name('admin.member.action');
+
+    Route::get('/blog','Admin\BlogController@index')->name('admin.blog');
+    Route::post('/blog','Admin\BlogController@create')->name('admin.blog');
+    Route::put('/blog','Admin\BlogController@action')->name('admin.blog');
+
+    Route::get('/donation','Admin\DonateController@index')->name('admin.donation');
+    Route::post('/donation/image','Admin\DonateController@image')->name('admin.donation.image');
+    Route::delete('/donation/image','Admin\DonateController@image_delete')->name('admin.donation.image');
+    Route::post('/donation/method','Admin\DonateController@method')->name('admin.donation.method');
+    Route::delete('/donation/method/{id}','Admin\DonateController@method_delete')->name('admin.donation.method.delete');
+    Route::post('/donation/method/no/{id}','Admin\DonateController@payment_id')->name('admin.donation.id');
+    Route::delete('/donation/method/no/{id}','Admin\DonateController@payment_id_delete')->name('admin.donation.id');
+    Route::post('/donation/confirm/{id}','Admin\DonateController@action')->name('admin.donation.confirm');
+    Route::delete('/donation/delete/{id}','Admin\DonateController@donation_delete')->name('admin.donation.delete');
 });
 
 Route::get('/partner', 'GuestController@partner')->name('partner');
@@ -68,3 +82,10 @@ Route::get('/contact','GuestController@contact')->name('contact');
 Route::post('/contact','GuestController@contact_mail');
 Route::get('/volunteer/registration','GuestController@volunteer')->name('volunteer');
 Route::post('/volunteer/registration','GuestController@volunteer_store');
+Route::get('/blog','GuestController@blog')->name('blog');
+Route::get('/blog/{id}','GuestController@blog_view')->name('blog.view');
+Route::post('/comment','GuestController@comment_store')->name('comment');
+Route::get('/donation','GuestController@donation')->name("donation");
+Route::post('/donation','GuestController@donation_store')->name("donation");
+Route::get('/payment_account/{method_id}','GuestController@payment_account')->name("payment_account");
+Route::get('/dashboard','HomeController@dashboard')->name('dashboard');

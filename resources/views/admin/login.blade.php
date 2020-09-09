@@ -106,7 +106,7 @@
 <div class="container">
     <div class="d-flex justify-content-center h-100">
         <div class="card">
-            <<div class="card-header text-center">
+            <div class="card-header text-center">
                 <img src="{{ asset('/images/logo.png') }}" class="img-fluid col-md-5">
             </div>
             <div class="card-body">

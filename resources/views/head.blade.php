@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/fontawesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}">
+    <script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js') }}"></script>
         <style>
         .title-try{
             color: black;

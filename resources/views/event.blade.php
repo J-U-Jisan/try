@@ -11,7 +11,7 @@
             @if($upcomings->count()==0)
                 <div class="text-center">
                     <p class="text-danger">No Upcoming Event</p>
-                    <p class="text-success"><button class="btn btn-success">Donate</button> more, so that we can arrange more event.</p>
+                    <p class="text-success"><button onclick="window.location.href='{{ route('donation') }}'" class="btn btn-success">Donate</button> more, so that we can arrange more event.</p>
                 </div>
             @endif
             <div class="d-flex justify-content-center flex-wrap" >
@@ -22,14 +22,14 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $upcoming->title }}</h5>
                             <p class="card-text">
-                                {{ \Illuminate\Support\Str::limit($upcoming->details, 100, '...') }}
+                                {!! \Illuminate\Support\Str::limit($upcoming->details, 100, '...') !!}
                                 @if (strlen($upcoming->details) > 100)
                                     <a href="{{ route('event.view',[$upcoming->id]) }}">
                                         <span id="dots">Read more</span></a>
                                 @endif
                             </p>
                             <div class="card-text text-center p-3">
-                                <button class="btn btn-dark event">Donate Now</button>
+                                <button onclick="window.location.href='{{ route('donation') }}'" class="btn btn-dark event">Donate Now</button>
                             </div>
 
                         </div>
@@ -49,7 +49,7 @@
             @if($ongoings->count()==0)
                 <div class="text-center">
                     <p class="text-danger">No On-Going Event</p>
-                    <p class="text-success"><button class="btn btn-success">Donate</button> more, so that we can arrange more event.</p>
+                    <p class="text-success"><button onclick="window.location.href='{{ route('donation') }}'" class="btn btn-success">Donate</button> more, so that we can arrange more event.</p>
                 </div>
             @endif
             <div class="d-flex justify-content-center flex-wrap" >
@@ -59,14 +59,14 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $ongoing->title }}</h5>
                             <p class="card-text">
-                                {{ \Illuminate\Support\Str::limit($ongoing->details, 100, '...') }}
+                                {!! \Illuminate\Support\Str::limit($ongoing->details, 100, '...') !!}
                                 @if (strlen($ongoing->details) > 100)
                                     <a href="{{ route('event.view',[$ongoing->id]) }}">
                                         <span id="dots">Read more</span></a>
                                 @endif
                             </p>
                             <div class="card-text text-center p-3">
-                                <button class="btn btn-dark event">Donate Now</button>
+                                <button onclick="window.location.href='{{ route('donation') }}'" class="btn btn-dark event">Donate Now</button>
                             </div>
 
                         </div>
@@ -86,7 +86,7 @@
             @if($closed_list->count()==0)
                 <div class="text-center">
                     <p class="text-danger">No Closed Event</p>
-                    <p class="text-success"><button class="btn btn-success">Donate</button> more, so that we can arrange more event.</p>
+                    <p class="text-success"><button onclick="window.location.href='{{ route('donation') }}'" class="btn btn-success">Donate</button> more, so that we can arrange more event.</p>
                 </div>
             @endif
             <div class="d-flex justify-content-center flex-wrap" >
@@ -96,14 +96,14 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $closed->title }}</h5>
                             <p class="card-text">
-                                {{ \Illuminate\Support\Str::limit($closed->details, 100, '...') }}
+                                {!! \Illuminate\Support\Str::limit($closed->details, 100, '...') !!}
                                 @if (strlen($closed->details) > 100)
                                     <a href="{{ route('event.view',[$closed->id]) }}">
                                         <span id="dots">Read more</span></a>
                                 @endif
                             </p>
                             <div class="card-text text-center p-3">
-                                <button class="btn btn-dark event">Donate Now</button>
+                                <button onclick="window.location.href='{{ route('donation') }}'" class="btn btn-dark event">Donate Now</button>
                             </div>
 
                         </div>
