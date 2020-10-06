@@ -89,3 +89,4 @@ Route::get('/donation','GuestController@donation')->name("donation");
 Route::post('/donation','GuestController@donation_store')->name("donation");
 Route::get('/payment_account/{method_id}','GuestController@payment_account')->name("payment_account");
 Route::get('/dashboard','HomeController@dashboard')->name('dashboard');
+Route::get('/history','GuestController@history')->name('history');

@@ -10,7 +10,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $member->name }}</h5>
                             <p class="card-text">{{ $member->rank }}</p>
-                            <ul class="list-unstyled list-group-horizontal">
+                            <ul class="list-unstyled list-group-horizontal ml-0">
                                 <li class="">Mobile: {{ $member->mobile ?? 'N/A' }}</li>
                                 <li class="">Email: {{ $member->email ?? 'N/A' }}</li>
                             </ul>

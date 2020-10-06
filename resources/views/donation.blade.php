@@ -23,10 +23,16 @@
                 </div>
             </div>
         @endif
-        <div class="text-center">
-          <img src="{{ asset('/storage/donation_image/'. $image->donation_image) }}" class="w-75">
-        </div>
 
+
+        <div class="text-center">
+          @if(isset($image))
+                <a data-lightbox="mygallery" href="{{ asset('storage/donation_image/'.$image->donation_image) }}">
+                    <img src="{{ asset('storage/donation_image/'.$image->donation_image) }}" alt="..." class="img-fluid" style="width: 1000px !important;">
+                </a>
+          @endif
+
+        </div>
         <div class="mt-5">
             <h4 class="mb-3">Select Payment Method</h4>
             <form method="POST" action="{{ route('donation') }}">

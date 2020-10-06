@@ -178,7 +178,7 @@
 
                 @foreach($pendings as $pending)
                 <tr>
-                    <td scope="row">{{ $pending->method }}</td>
+                    <td>{{ $pending->method }}</td>
                     <td>{{ $pending->account }}</td>
                     <td>{{ $pending->amount }}</td>
                     <td>{{ $pending->name }}</td>
@@ -190,7 +190,7 @@
 
                     </td>
                     <td>
-                        <input type="submit" class="btn btn-outline-danger" name="delete" onclick="if (!confirm('Are you sure?')) { return false }" value="Cancel">
+                        <input type="submit" class="btn btn-outline-danger" name="delete" value="Cancel" onclick="if (!confirm('Are you sure?')) { return false }">
                     </td>
                     </form>
                 </tr>

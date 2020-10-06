@@ -55,7 +55,7 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">History</a><hr>
+                    <a class="dropdown-item" href="{{ route('history') }}">History</a><hr>
                     <a class="dropdown-item" href="{{ route('welcome').'#mission' }}">Mission & Vission</a><hr>
                     <a class="dropdown-item" href="{{ route('member') }}">Member</a><hr>
                     <a class="dropdown-item" href="#work">How it works</a>
@@ -67,7 +67,7 @@
             </li>
             @else
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" style="background: #a3a3ee;" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" style="color: blue;" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdownMenuLink">

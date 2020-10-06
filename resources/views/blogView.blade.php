@@ -4,7 +4,7 @@
 <section class="section-padding" style="background: #d7d5cf">
     <div class="row justify-content-center">
     <div class="w-75">
-        <img src="{{ asset('/storage/post/'.$post->featured_image) }}" class="w-75">
+        <img src="{{ asset('/storage/post/'.$post->featured_image) }}" class="blog-img w-75">
         <h2 class="mt-3">{{ $post->title }}</h2>
         <p><i class="far fa-calendar-alt"></i> {{ $post->created_at }}</p>
         <div class="p-5 bg-white">

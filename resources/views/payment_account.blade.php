@@ -4,7 +4,7 @@
     <div class="form-check p-2 pl-5">
         <input class="form-check-input" style="height: 25px; width: 25px;" type="radio" name="account" id="account{{ $account->id }}" value="{{ $account->account_no }}" required>
         <label class="form-check-label col-md-6" for="account{{ $account->id }}">
-        <div class="ml-4 px-5 py-3"  style="background: #cedfc9;box-shadow: 0px 0px 5px 1px #5d5a5a; border-radius: 10px;">
+        <div class="ml-4 px-5 py-3 payment-account">
 
             <span style="font-weight: bold; font-size: 25px;">A/C : </span><span style="color: red;font-size: 25px;"> {{ $account->account_no }}</span>
             @isset($account->is_agent)
@@ -36,7 +36,7 @@
         </label>
     </div>
 @endforeach
-<div class="p-1 text-black mb-3 mt-3 text-center" style="font-size: 25px; background: #faa2a2; border-radius: 10px;">After sending donation to your selected account fillup below form</div>
+<div class="p-1 text-black mb-3 mt-3 text-center payment-notice">After sending donation to your selected account fillup below form</div>
 
 @guest
 <div class="col-md-4 d-inline-block ml-2">

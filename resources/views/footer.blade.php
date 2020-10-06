@@ -2,13 +2,14 @@
     <div class="container clearfix section-padding">
         <div class="col float-left col-md-5">
             <div style="display: inline-flex;">
-                <img src="{{ asset('images/logo.png') }}" alt="Try" class="col-7 col-md-4">
+                <img src="{{ asset('images/logo.png') }}" alt="Try" class="footer-img col-7 col-md-4">
                 <span class="title-try" style="color:white;">Be the reason someone smiles today</span>
             </div>
             <br><br>
-            <p>Bidyanondo (Learn for Fun) is an educational voluntary organization in Bangladesh. The official registration No. is S-12258/2015). Bidyanondo has been running by 40 officers and hundreds of volunteers, whose mission is t...</p>
+            <p>TRY, a volunteer organization made by KUETians with an indomitable desire and mentality
+                to stand beside people...</p>
             <br>
-            <a href="#" style="color: #00a78e !important; font-weight: bold;" >READ MORE <i class="fas fa-long-arrow-alt-right"></i></i></a>
+            <a href="{{ route('history') }}" style="color: #00a78e !important; font-weight: bold;" >READ MORE <i class="fas fa-long-arrow-alt-right"></i></i></a>
             <br>
             <br>
             <a href="https://www.facebook.com/try.kuet" target="_blank"><i class="fab fa-facebook-f"></i></a>

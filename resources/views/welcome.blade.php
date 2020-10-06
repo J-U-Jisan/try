@@ -14,11 +14,10 @@
                 <?php $cnt=0; ?>
                 @foreach($sliders as $slider)
                     <?php $cnt++; ?>
-
                     <div class="carousel-item {{ $cnt!=1?'': 'active' }}">
                         <img class="d-block w-100 slider-h" src="{{ asset('storage/slider/'.$slider->name) }}">
                         <div class="carousel-caption d-none d-md-block">
-                            <button onclick="window.location.href='{{ route('donation') }}'" type="button" class="btn btn-donate-hero font-weight-bold px-4 py-2" data-toggle="modal" data-target="#exampleModalCenter">DONATE</button>
+                            <button onclick="window.location.href='{{ route('donation') }}'" type="button" class="btn btn-donate-hero font-weight-bold px-4 py-2">DONATE</button>
                         </div>
                     </div>
                 @endforeach
@@ -36,12 +35,12 @@
     </div>
     <main class="">
         <section class="clearfix">
-            <div class="container-fluid pt-5 pb-5" style="background: #e5e7e6;">
+            <div class="container-fluid pt-5 pb-5 thoughts-try" style="background: #e5e7e6;">
                 <h3 class="text-center">Thoughts About Try</h3>
                 <div class="row mt-5">
                     @foreach($videos as $video)
                         <div class="col-md-5 col-sm-12" style="margin: 0 auto !important;">
-                            <iframe height="400" class="col-md-12" src="{{ $video->link }}"
+                            <iframe height="400" class="col-md-12 col-sm-12" src="{{ $video->link }}"
                                     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                             </iframe>
                         </div>
@@ -53,8 +52,8 @@
             <div class="container">
                 <div class="row section-title-t2">
                     <div class="col col-md-8 col-md-offset-2">
-                        <h2 style="margin-bottom: 12px"><span>Our</span> Mission </h2>
-                        <p>Provide support to underprivileged section of the society specially extreme poor/ homeless and orphan children through quality education ,nourishment &amp; shelter to make them resources for the nation.</p>
+                        <h2 style="margin-bottom: 12px;"><span>Our</span> Mission </h2>
+                        <p class="mission-text">Provide support to underprivileged section of the society specially extreme poor/ homeless and orphan children through quality education, nourishment &amp; shelter to make them resources for the nation.</p>
                     </div>
                 </div>
                 <div class="row content">
@@ -88,7 +87,7 @@
             </div>
         </section>
 
-        <section class="card-full-body container mb-5">
+        <section class="card-full-body container mb-5 home-event">
             <div class="row section-title">
                 <div class="col col-xs-12">
                     <h1><font>LATEST</font> EVENTS</h1>

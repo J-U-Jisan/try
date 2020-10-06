@@ -177,4 +177,7 @@ class GuestController extends Controller
 
         return view('payment_account',compact('accounts'));
     }
+    public function history(){
+        return view('history');
+    }
 }
