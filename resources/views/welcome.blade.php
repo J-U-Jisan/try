@@ -39,8 +39,8 @@
                 <h3 class="text-center">Thoughts About Try</h3>
                 <div class="row mt-5">
                     @foreach($videos as $video)
-                        <div class="col-md-5 col-sm-12" style="margin: 0 auto !important;">
-                            <iframe height="400" class="col-md-12 col-sm-12" src="{{ $video->link }}"
+                        <div class="col-md-5 col-sm-6 col-" style="margin: 0 auto !important;">
+                            <iframe height="400" class="col-md-12" src="{{ $video->link }}"
                                     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                             </iframe>
                         </div>
@@ -49,24 +49,24 @@
             </div>
         </section>
         <section class="cta-5 section-padding" style="background: #fff;" id="mission">
-            <div class="container">
+            <div class="container mission">
                 <div class="row section-title-t2">
-                    <div class="col col-md-8 col-md-offset-2">
+                    <div class="col-md-8">
                         <h2 style="margin-bottom: 12px;"><span>Our</span> Mission </h2>
                         <p class="mission-text">Provide support to underprivileged section of the society specially extreme poor/ homeless and orphan children through quality education, nourishment &amp; shelter to make them resources for the nation.</p>
                     </div>
                 </div>
-                <div class="row content">
-                    <div class="col-md-4">
+                <div class="row content justify-content-center">
+                    <div class="col-md-4 col-sm-6">
                         <div class="wow fadeInLeftSlow" style="visibility: visible; animation-name: fadeInLeftSlow;">
-              <span class="icon">
-                <i class="fas fa-utensils fa-5x"></i>
-              </span>
+                          <span class="icon">
+                            <i class="fas fa-utensils fa-5x"></i>
+                          </span>
                             <h3>Food</h3>
                             <p>We want to inspire a nation with food. Best relation can be created through sharing food.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-6">
                         <div class="wow fadeInLeftSlow" style="visibility: visible; animation-name: fadeInLeftSlow;">
 
                             <span class="icon"><i class="fas fa-graduation-cap fa-5x"></i></span>
@@ -75,7 +75,7 @@
                                 To become a national treasure by offering free education to children and orphans</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-6">
                         <div class="wow fadeInLeftSlow" style="visibility: visible; animation-name: fadeInLeftSlow;">
 
                             <span class="icon"><i class="fas fa-briefcase-medical fa-5x"></i></span>
@@ -115,7 +115,9 @@
             </div>
 
             <br><br><br>
-            <button onclick="window.location.href='{{ route('event') }}'" type="button" class="btn btn-projects-danger">VIEW ALL EVENTS &nbsp; <i class="fas fa-long-arrow-alt-right"></i></button>
+            <div class="full-event">
+                <button onclick="window.location.href='{{ route('event') }}'" type="button" class="btn btn-projects-danger">VIEW ALL EVENTS &nbsp; <i class="fas fa-long-arrow-alt-right"></i></button>
+            </div>
             <br><br>
         </section>
 

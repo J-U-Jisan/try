@@ -23,7 +23,7 @@
             transform: translateY(12px);
             display: inline-flex;
         }
-        @media (max-width: 450px) {
+        @media (max-width: 567px) {
             .title-try{
                 color: black;
                 font-style: italic;

@@ -25,14 +25,14 @@
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 769,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
                 }
             },
             {
-                breakpoint: 480,
+                breakpoint: 576,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
@@ -67,4 +67,16 @@
         const loader = document.querySelector(".loader");
         loader.className += "  hidden";
     });
+</script>
+<script>
+    function changeClass() {
+        var x = document.getElementsByClassName('card-full-body container mb-5 home-event');
+        var width = (window.innerWidth > 0) ? window.innerWidth : screen.Width;
+        console.log("Helllo World");
+        if(x.length > 0) {
+            if(width <= 768) {
+                x[0].className ='card-full-body mb-5 home-event';
+            }
+        }
+    }
 </script>

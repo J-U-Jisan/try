@@ -3,7 +3,7 @@
 
 @include('head')
 
-<body>
+<body  onload="changeClass()">
 
 <div class="loader">
     <img src="{{ asset('images/logo.png') }}" alt="loading...">
@@ -63,7 +63,7 @@
             </li>
             @guest
             <li class="nav-item">
-                <button class="border-dark bg-transparent"><a class="nav-link" href="{{ route('login') }}">Sign In</a></button>
+                <button class="btn btn-outline-dark bg-transparent px-2 py-0"><a class="nav-link" href="{{ route('login') }}">Sign In</a></button>
             </li>
             @else
                 <li class="nav-item dropdown">
