@@ -9,7 +9,7 @@
     @endif
     <div class="leftcolumn">
         @foreach($posts as $post)
-        <div class="card p-2" style="box-shadow: 0px 0px 4px 1px black">
+        <div class="card p-2" style="box-shadow: 0px 0px 10px 1px #999ca1; padding: 15px !important;">
             <div>
             <h2>{{ $post->title }}</h2>
             <p><i class="far fa-calendar-alt"></i> {{ $post->created_at }}</p>

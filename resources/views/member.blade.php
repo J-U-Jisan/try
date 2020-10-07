@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="clearfix section-padding" style="background: #e5e7e6">
-        <div class="container">
+        <div class="event container">
             <div class="d-flex justify-content-center flex-wrap">
                 @foreach($members as $member)
                     <div class="card m-2" style="width: 20rem;height: 400px; background: #abe0cf">

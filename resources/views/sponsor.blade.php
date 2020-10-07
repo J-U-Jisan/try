@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="help clearfix pt-5 pb-5 mt-5" style="background: #e5e7e6;">
-        <div class="container">
+        <div class="event container">
             <div class="row section-title">
                 <div class="col col-xs-12">
                     <h2 class="text-black-50">OUR SPONSORS</h2>

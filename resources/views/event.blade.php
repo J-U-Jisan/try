@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="help clearfix section-padding" id="upcoming">
-        <div class="container">
+        <div class="event container">
             <div class="row section-title home-event">
                 <div class="col col-xs-12">
                     <h1><font style="color: #209e9a">Upcoming</font> Events</h1>
@@ -40,7 +40,7 @@
         </div>
     </section>
     <section class="help clearfix pt-5 pb-5" id="ongoing" style="background: #caecca">
-        <div class="container">
+        <div class="event container">
             <div class="row section-title home-event">
                 <div class="col col-xs-12">
                     <h1><font style="color: #209e9a">On-Going</font> Events</h1>
@@ -77,7 +77,7 @@
         </div>
     </section>
     <section class="clearfix pt-5 pb-5" style="background: #F1F4F6;">
-        <div class="container">
+        <div class="event container">
             <div class="row section-title home-event">
                 <div class="col col-xs-12">
                     <h1><font style="color: #209e9a">Closed</font> Events</h1>

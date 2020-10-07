@@ -2,7 +2,7 @@
     <div class="container clearfix section-padding">
         <div class="col float-left col-md-5">
             <div style="display: inline-flex;">
-                <img src="{{ asset('images/logo.png') }}" alt="Try" class="footer-img col-7 col-md-4">
+                <img src="{{ asset('images/logo.png') }}" alt="Try" class="footer-img col-7 col-md-4 col-sm-4">
                 <span class="title-try" style="color:white;">Be the reason someone smiles today</span>
             </div>
             <br><br>

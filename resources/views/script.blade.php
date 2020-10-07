@@ -72,10 +72,17 @@
     function changeClass() {
         var x = document.getElementsByClassName('card-full-body container mb-5 home-event');
         var width = (window.innerWidth > 0) ? window.innerWidth : screen.Width;
-        console.log("Helllo World");
+        console.log("Helllo World =>" + width);
         if(x.length > 0) {
             if(width <= 768) {
-                x[0].className ='card-full-body mb-5 home-event';
+                $(x).removeClass('container mb-5');
+            }
+        }
+        var event = document.getElementsByClassName('event container');
+        console.log("Helllo World =>" + width);
+        if(event.length > 0) {
+            if(width <= 768) {
+                $(event).removeClass('container');
             }
         }
     }
