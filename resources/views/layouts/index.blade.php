@@ -94,6 +94,7 @@
         <button onclick="topFunction()" id="hiBtn" title="Go to top"><i class="fas fa-angle-up"></i></button>
     </div>
 </div>
+
 @include('footer')
 @include('script')
 </body>
