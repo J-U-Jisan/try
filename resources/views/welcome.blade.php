@@ -40,7 +40,7 @@
                 <div class="row mt-5">
                     @foreach($videos as $video)
                         <div class="col-md-5 col-sm-6 col-" style="margin: 0 auto !important;">
-                            <iframe height="400" class="col-md-12" src="{{ $video->link }}"
+                            <iframe style="border-radius: 1%;" height="400" class="col-md-12" src="{{ $video->link }}"
                                     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                             </iframe>
                         </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="row content justify-content-center">
                     <div class="col-md-4 col-sm-6">
-                        <div class="wow fadeInLeftSlow" style="visibility: visible; animation-name: fadeInLeftSlow;">
+                        <div class="wow fadeInLeftSlow mission-style">
                           <span class="icon">
                             <i class="fas fa-utensils fa-5x"></i>
                           </span>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
-                        <div class="wow fadeInLeftSlow" style="visibility: visible; animation-name: fadeInLeftSlow;">
+                        <div class="wow fadeInLeftSlow mission-style">
 
                             <span class="icon"><i class="fas fa-graduation-cap fa-5x"></i></span>
                             <h3>Education</h3>
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
-                        <div class="wow fadeInLeftSlow" style="visibility: visible; animation-name: fadeInLeftSlow;">
+                        <div class="wow fadeInLeftSlow mission-style">
 
                             <span class="icon"><i class="fas fa-briefcase-medical fa-5x"></i></span>
                             <h3>Treatment</h3>

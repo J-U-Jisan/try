@@ -16,7 +16,7 @@
             @endif
             <div class="d-flex justify-content-center flex-wrap" >
                 @foreach($upcomings as $upcoming)
-                    <div class="card m-2" style="width: 21rem; background: #bde0e0;">
+                    <div class="card m-2" style="width: 21rem; background: #bde0e0; border-radius: 1%;">
                         <img class="card-img-top" style="height: 220px;" src="{{ asset('storage/event/'.$upcoming->name) }}" alt="Card image cap">
 
                         <div class="card-body">
@@ -54,7 +54,7 @@
             @endif
             <div class="d-flex justify-content-center flex-wrap" >
                 @foreach($ongoings as $ongoing)
-                    <div class="card m-2" style="width: 21rem; background: #2efa8e;">
+                    <div class="card m-2" style="width: 21rem; background: #2efa8e;border-radius: 1%;">
                         <img class="card-img-top" style="height: 220px;" src="{{ asset('storage/event/'.$ongoing->name) }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $ongoing->title }}</h5>
@@ -91,7 +91,7 @@
             @endif
             <div class="d-flex justify-content-center flex-wrap" >
                 @foreach($closed_list as $closed)
-                    <div class="card m-2" style="width: 21rem;background: #aee7c9;">
+                    <div class="card m-2" style="width: 21rem;background: #aee7c9;border-radius: 1%;">
                         <img class="card-img-top" style="height: 220px;" src="{{ asset('storage/event/'.$closed->name) }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $closed->title }}</h5>

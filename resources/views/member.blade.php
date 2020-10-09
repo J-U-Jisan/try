@@ -5,7 +5,7 @@
         <div class="event container">
             <div class="d-flex justify-content-center flex-wrap">
                 @foreach($members as $member)
-                    <div class="card m-2" style="width: 20rem;height: 430px; background: #abe0cf">
+                    <div class="card m-2" style="width: 20rem;height: 430px; background: #abe0cf; border-radius: 1%;">
                         <img class="card-img-top" style="max-height: 260px;" src="{{ asset('storage/member/'.$member->image) }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $member->name }}</h5>

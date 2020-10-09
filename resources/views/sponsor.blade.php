@@ -13,7 +13,7 @@
                     <div class="bg-danger text-white p-3">No Sponsors. Contact for being sponsor of us</div>
                 @endif
                 @foreach($partners as $partner)
-                        <div class="card m-2" style="width: 18rem;">
+                        <div class="card m-2" style="width: 18rem; border-radius: 1%;">
                             <img src="{{ asset('storage/partner/'.$partner->name) }}" class="card-img-top partner" alt="...">
                             <div class="card-footer text-center" style="background: #8fed84;">
                                 <p class="card-text font-weight-bold">{{ $partner->title }}</p>

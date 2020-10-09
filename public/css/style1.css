@@ -193,6 +193,13 @@
     border-radius: 10px;
 }
 /* --End Donation---*/
+/* -- Mission --*/
+.mission-style{
+    visibility: visible !important;
+    animation-name: fadeInLeftSlow;
+    border-radius: 1%;
+}
+/* --- End Mission ---*/
 /* Blog */
 .blog-img{
     height: 400px;
@@ -1573,6 +1580,7 @@ html { scroll-behavior: smooth;}
     background: #B3DBDA;
     flex: 1;
     margin: 0 10px;
+    border-radius: 1%;
 }
 .event-slider .card .img{
     height: 200px;

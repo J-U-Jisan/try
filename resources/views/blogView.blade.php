@@ -7,7 +7,7 @@
         <img src="{{ asset('/storage/post/'.$post->featured_image) }}" class="blog-img w-75">
         <h2 class="mt-3">{{ $post->title }}</h2>
         <p><i class="far fa-calendar-alt"></i> {{ $post->created_at }}</p>
-        <div class="p-5 bg-white">
+        <div class="p-5 bg-white" style="border-radius: 1%;">
             {!! $post->details !!}
         </div>
         <div class="mt-4 float-right row">
