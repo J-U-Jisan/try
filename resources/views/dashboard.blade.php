@@ -1,5 +1,7 @@
 @extends('layouts.index')
 
+@section('title','Dashboard | ')
+
 @section('content')
 <section class="section-padding clearfix">
     <div class="container">

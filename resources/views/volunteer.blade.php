@@ -1,5 +1,7 @@
 @extends('layouts.index')
 
+@section('title','Volunteer Registration | ')
+
 @section('content')
     <section class="clearfix section-padding" style="background: url({{ asset('images/volunteer.jpg') }}) no-repeat center center fixed;-webkit-background-size: cover;
         -moz-background-size: cover;

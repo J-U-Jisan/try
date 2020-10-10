@@ -1,5 +1,7 @@
 @extends('layouts.index')
 
+@section('title', 'Contact Us | ')
+
 @section('content')
     <!--Section: Contact v.1-->
     <section class="section section-padding"  style="background: #d7d9d8">

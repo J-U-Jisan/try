@@ -1,5 +1,9 @@
 @extends('layouts.index')
 
+@section('title')
+    {{ $post->title }} | Blog |
+@endsection
+
 @section('content')
 <section class="section-padding" style="background: #d7d5cf">
     <div class="row justify-content-center">

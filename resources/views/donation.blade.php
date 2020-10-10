@@ -1,5 +1,7 @@
 @extends('layouts.index')
 
+@section('title','Donation | ')
+
 @section('content')
 <section class="section-padding" style="background: #e5e7e6">
     <div class="container">

@@ -1,5 +1,7 @@
 @extends('layouts.index')
 
+@section('title','History | ')
+
 @section('content')
 <section class="section-padding" style="background: #E5E7E6;">
     <div class="container w-75">

@@ -1,5 +1,7 @@
 @extends('layouts.index')
 
+@section('title','Member | ')
+
 @section('content')
     <section class="clearfix section-padding" style="background: #e5e7e6">
         <div class="event container">

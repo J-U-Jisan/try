@@ -1,5 +1,9 @@
 @extends('layouts.index')
 
+@section('title')
+    {{ $event->title }} | Event |
+@endsection
+
 @section('content')
     <section class="help clearfix section-padding mt-5">
         <div class="container">

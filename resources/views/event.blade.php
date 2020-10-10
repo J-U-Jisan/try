@@ -1,5 +1,7 @@
 @extends('layouts.index')
 
+@section('title','Event | ')
+
 @section('content')
     <section class="help clearfix section-padding" id="upcoming">
         <div class="event container">
@@ -76,7 +78,7 @@
             {{ $ongoings->appends(['upcoming'=> $upcomings->currentPage(), 'closed'=>$closed_list->currentPage()])->render("pagination::bootstrap-4") }}
         </div>
     </section>
-    <section class="clearfix pt-5 pb-5" style="background: #F1F4F6;">
+    <section class="clearfix pt-5 pb-5" id="closed" style="background: #F1F4F6;">
         <div class="event container">
             <div class="row section-title home-event">
                 <div class="col col-xs-12">
