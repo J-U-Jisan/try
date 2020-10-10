@@ -35,9 +35,12 @@
         transform: translate(-9%,48%);
         width: 150px;
     }
+    .dropdown-menu{
+        margin-left: 6% !important;
+    }
     .slider-h{
-        height: 350px !important;
-        margin-top: 50px !important;
+        height: 300px !important;
+        margin-top: 55px !important;
     }
     .thoughts-try{
         padding-bottom: 0px !important;
@@ -119,16 +122,20 @@
     }
 }
 
-@media only screen and (max-width: 769px){
+@media only screen and (max-width: 769px) and (min-width: 576px){
     .navbar .collapse.navbar-collapse{
         transform: translateX(30%) !important;
         float: left !important;
         width: 10% !important;
         text-align: left !important;
     }
+    .dropdown-menu{
+        margin-top: -3% !important;
+        margin-left: 10% !important;
+    }
     .slider-h{
         height: 450px !important;
-        margin-top: 88px !important;
+        margin-top: 60px !important;
     }
     .thoughts-try iframe{
         width: 98% !important;
@@ -194,10 +201,14 @@
 }
 /* --End Donation---*/
 /* -- Mission --*/
-.mission-style{
+.mission-style div{
     visibility: visible !important;
     animation-name: fadeInLeftSlow;
     border-radius: 1%;
+    transition: 2s;
+}
+.mission-style div:hover{
+    transform: scale(1.1);
 }
 /* --- End Mission ---*/
 /* Blog */
@@ -759,7 +770,7 @@ p{
     margin-bottom: 5px;
 }
 .col-md-4 .wow.fadeInLeftSlow:hover{
-    background-color: #f00;
+    background-color: #4563d2;
 }
 .col-md-4 .wow.fadeInLeftSlow h3 {
     color: #fff !important;

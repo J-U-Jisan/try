@@ -33,7 +33,7 @@
                 <a class="nav-link dropdown-toggle" href="{{ route('event') }}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     EVENT
                 </a>
-                <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdownMenuLink">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{{ route('event').'#upcoming' }}">Upcoming </a><hr>
                     <a class="dropdown-item" href="{{ route('event').'#ongoing' }}">On Going</a><hr>
                     <a class="dropdown-item" href="{{ route('event').'#closed' }}">Closed</a>
@@ -54,7 +54,7 @@
                     ABOUT
                 </a>
 
-                <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdownMenuLink">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{{ route('history') }}">History</a><hr>
                     <a class="dropdown-item" href="{{ route('welcome').'#mission' }}">Mission & Vission</a><hr>
                     <a class="dropdown-item" href="{{ route('member') }}">Member</a><hr>

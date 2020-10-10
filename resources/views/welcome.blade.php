@@ -57,8 +57,8 @@
                     </div>
                 </div>
                 <div class="row content justify-content-center">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="wow fadeInLeftSlow mission-style">
+                    <div class="col-md-4 col-sm-6 mission-style">
+                        <div class="wow fadeInLeftSlow">
                           <span class="icon">
                             <i class="fas fa-utensils fa-5x"></i>
                           </span>
@@ -66,8 +66,8 @@
                             <p>We want to inspire a nation with food. Best relation can be created through sharing food.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="wow fadeInLeftSlow mission-style">
+                    <div class="col-md-4 col-sm-6 mission-style">
+                        <div class="wow fadeInLeftSlow">
 
                             <span class="icon"><i class="fas fa-graduation-cap fa-5x"></i></span>
                             <h3>Education</h3>
@@ -75,8 +75,8 @@
                                 To become a national treasure by offering free education to children and orphans</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="wow fadeInLeftSlow mission-style">
+                    <div class="col-md-4 col-sm-6 mission-style">
+                        <div class="wow fadeInLeftSlow">
 
                             <span class="icon"><i class="fas fa-briefcase-medical fa-5x"></i></span>
                             <h3>Treatment</h3>
