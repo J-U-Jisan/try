@@ -2,6 +2,10 @@
 
 @section('title','Donation | ')
 
+@section('meta_title', 'Donation | Try')
+
+@section('description', 'Donation information are here. Donate more and be the reason someone smiles today')
+
 @section('content')
 <section class="section-padding" style="background: #e5e7e6">
     <div class="container">

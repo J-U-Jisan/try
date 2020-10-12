@@ -2,6 +2,11 @@
 
 @section('title','History | ')
 
+@section('meta_title','History | Try')
+
+@section('description', 'TRY, a volunteer organization made by KUETians with an indomitable desire and mentality
+        to stand beside people.')
+
 @section('content')
 <section class="section-padding" style="background: #E5E7E6;">
     <div class="container w-75">

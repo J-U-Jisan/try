@@ -1,8 +1,18 @@
 @extends('layouts.index')
 
 @section('title')
-    {{ $event->title }} | Event |
+    {{ $event_title }} | Event |
 @endsection
+
+@section('meta_title')
+    {{ $event_title }} | Event | Try
+@endsection
+
+@section('description')
+    {!! \Illuminate\Support\Str::limit($event->details, 150, '...') !!}
+@endsection
+
+@section('image', asset('storage/event/'.$event->name))
 
 @section('content')
     <section class="help clearfix section-padding mt-5">

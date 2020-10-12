@@ -2,6 +2,10 @@
 
 @section('title','Blog | ')
 
+@section('meta_title', 'Blog | Try')
+
+@section('description', 'We write article about different activity of Try')
+
 @section('content')
 
 <section class="section-padding" style="background: #e5e7e6">

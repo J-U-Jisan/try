@@ -2,6 +2,10 @@
 
 @section('title','Event | ')
 
+@section('meta_title', 'Event | Try')
+
+@section('description', 'Upcoming, Ongoing and Closed events of Try')
+
 @section('content')
     <section class="help clearfix section-padding" id="upcoming">
         <div class="event container">

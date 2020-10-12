@@ -1518,9 +1518,7 @@ html { scroll-behavior: smooth;}
         height: 300px;
         margin-bottom: 5px;
     }
-    .col-md-4 .wow.fadeInLeftSlow:hover{
-        background-color: #f00;
-    }
+
     .col-md-4 .wow.fadeInLeftSlow h3 {
         color: #fff !important;
     }

@@ -2,6 +2,10 @@
 
 @section('title','Dashboard | ')
 
+@section('meta_title', 'Dashboard | Try')
+
+@section('description', 'Your donations info are here.')
+
 @section('content')
 <section class="section-padding clearfix">
     <div class="container">

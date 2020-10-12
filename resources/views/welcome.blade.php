@@ -1,5 +1,12 @@
 @extends('layouts.index')
 
+@section('meta_title','Try')
+
+@section('description','TRY, a volunteer organization made by KUETians with an indomitable desire and mentality
+        to stand beside people.')
+
+@section('image', asset('images/logo.png'))
+
 @section('content')
     <div class="row">
         <div id="carouselExampleIndicators" class="carousel slide col-md-12" data-ride="carousel">

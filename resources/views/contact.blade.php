@@ -2,6 +2,10 @@
 
 @section('title', 'Contact Us | ')
 
+@section('meta_title', 'Contact Us | Try')
+
+@section('description', 'In case, you want to contact with us, we are always here for you.')
+
 @section('content')
     <!--Section: Contact v.1-->
     <section class="section section-padding"  style="background: #d7d9d8">
@@ -9,9 +13,7 @@
         <!--Section heading-->
         <h2 class="section-heading h1 pt-4">Contact us</h2>
         <!--Section description-->
-        <p class="section-description pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-            amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-            pariatur accusamus veniam.</p>
+        <p class="section-description pb-4">In case, you want to contact with us, we are always here for you.</p>
 
         <div class="row">
 

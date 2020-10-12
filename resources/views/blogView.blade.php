@@ -4,6 +4,16 @@
     {{ $post->title }} | Blog |
 @endsection
 
+@section('meta_title')
+    {{ $post->title }} | Blog | Try
+@endsection
+
+@section('description')
+    {!! \Illuminate\Support\Str::limit($post->details, 150, '...') !!}
+@endsection
+
+@section('image', asset('storage/post/'.$post->featured_image))
+
 @section('content')
 <section class="section-padding" style="background: #d7d5cf">
     <div class="row justify-content-center">

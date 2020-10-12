@@ -2,6 +2,10 @@
 
 @section('title','Member | ')
 
+@section('meta_title','Member | Try')
+
+@section('description', 'Members of Try. The people who work voluntarily for helping helpless people.')
+
 @section('content')
     <section class="clearfix section-padding" style="background: #e5e7e6">
         <div class="event container">

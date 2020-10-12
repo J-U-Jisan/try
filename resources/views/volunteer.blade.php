@@ -2,6 +2,10 @@
 
 @section('title','Volunteer Registration | ')
 
+@section('meta_title','Volunteer Registration | Try')
+
+@section('description','Be one of us and be the reason someone smiles today')
+
 @section('content')
     <section class="clearfix section-padding" style="background: url({{ asset('images/volunteer.jpg') }}) no-repeat center center fixed;-webkit-background-size: cover;
         -moz-background-size: cover;

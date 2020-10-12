@@ -1,7 +1,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
     <title>@yield('title') Try</title>
+    <meta name="title" content="@yield('meta_title','Try')">
+    <meta name="description" content="@yield('description','TRY, a volunteer organization made by KUETians with an indomitable desire and mentality
+        to stand beside people.')">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="@yield('meta_title','Try')">
+    <meta property="og:description" content="@yield('description','TRY, a volunteer organization made by KUETians with an indomitable desire and mentality
+        to stand beside people.')">
+    <meta property="og:image" content="@yield('image', asset('images/logo.png'))">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ url()->current() }}">
+    <meta property="twitter:title" content="@yield('meta_title','Try')">
+    <meta property="twitter:description" content="@yield('description','TRY, a volunteer organization made by KUETians with an indomitable desire and mentality
+        to stand beside people.')">
+    <meta property="twitter:image" content="@yield('image', asset('images/logo.png'))">
+
 
     <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset( 'css/bootstrap.min.css') }}">
