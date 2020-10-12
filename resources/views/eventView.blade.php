@@ -1,11 +1,11 @@
 @extends('layouts.index')
 
 @section('title')
-    {{ $event_title }} | Event |
+    {{ $event->title }} | Event |
 @endsection
 
 @section('meta_title')
-    {{ $event_title }} | Event | Try
+    {{ $event->title }} | Event | Try
 @endsection
 
 @section('description')
