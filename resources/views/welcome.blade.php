@@ -140,7 +140,7 @@
                     <div class="col-12 col-md-7 col-sm-6 sing-up wow fadeInRightSlow" style="visibility: visible; animation-name: fadeInRightSlow;">
                         <h3>Registration for volunteer program</h3>
                         <span>Serve the humanity</span>
-                        <p style="color: #FB9;">Our opportunity to volunteer to inspire a nation extends from the work of the Office to the grassroots personnel stage. If you have a commitment to time and work as a marginalized community, we are waiting to welcome you to our team.</p>
+                        <p style="color: ghostwhite;">Our opportunity to volunteer to inspire a nation extends from the work of the Office to the grassroots personnel stage. If you have a commitment to time and work as a marginalized community, we are waiting to welcome you to our team.</p>
                         <button type="button" class="btn btn-outline-danger" onclick="window.location.href='{{ route('volunteer') }}'">REGISTRATION</button>
                     </div>
                 </div>

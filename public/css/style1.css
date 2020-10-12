@@ -29,6 +29,7 @@
 .slider-h{
     height: 600px !important;
     margin-top: 80px !important;
+    object-fit: cover;
 }
 @media only screen and (max-width: 576px) {
     .loader > img{
@@ -227,7 +228,7 @@ img.partner{
 }
 .btn-donate-hero:hover{
     background: rgba(179, 219, 218, 1);
-    color:red;
+    color: #000000;
 }
 *{
     margin: 0;
@@ -312,7 +313,7 @@ nav .collapse.navbar-collapse {
 .dropdown-item:focus, .dropdown-item:hover {
     color: #fff;
     text-decoration: none;
-    background-color: #f00;
+    background-color: #3e3c3c;
 }
 .dropdown-menu {
     position: absolute;
@@ -734,6 +735,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 p{
     line-height: 27px;
+}
+a p{
+    line-height: 22px !important;
 }
 .wow{
     visibility: hidden;

@@ -3,7 +3,7 @@
         <div class="col float-left col-md-5">
             <div style="display: inline-flex;">
                 <img src="{{ asset('images/logo.png') }}" alt="Try" class="footer-img col-7 col-md-4 col-sm-4">
-                <span class="title-try" style="color:white;">Be the reason someone smiles today</span>
+                <span class="title-try ml-2" style="color:white;">Be the reason someone smiles today</span>
             </div>
             <br><br>
             <p>TRY, a volunteer organization made by KUETians with an indomitable desire and mentality
@@ -26,7 +26,7 @@
         <div class="col float-left col-md-2">
             <h5 class="title">HELP</h5>
             <a href="{{ route('contact') }}"><p>Contact us</p></a>
-            <a href=""><p>About Us</p></a>
+            <a href="{{ route('history') }}"><p>About Us</p></a>
             <a href="{{ route('member') }}"><p>Members</p></a>
         </div>
         <div class="col float-left col-md-3">

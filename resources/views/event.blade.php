@@ -45,11 +45,11 @@
             {{ $upcomings->appends(['ongoing'=> $ongoings->currentPage(), 'closed'=>$closed_list->currentPage()])->render("pagination::bootstrap-4") }}
         </div>
     </section>
-    <section class="help clearfix pt-5 pb-5" id="ongoing" style="background: #caecca">
+    <section class="help clearfix pt-5 pb-5" id="ongoing" style="background: #b3dbda;">
         <div class="event container">
             <div class="row section-title home-event">
                 <div class="col col-xs-12">
-                    <h1><font style="color: #209e9a">On-Going</font> Events</h1>
+                    <h1><font style="color: #207d7a">On-Going</font> Events</h1>
                 </div>
             </div>
             @if($ongoings->count()==0)
@@ -60,7 +60,7 @@
             @endif
             <div class="d-flex justify-content-center flex-wrap" >
                 @foreach($ongoings as $ongoing)
-                    <div class="card m-2" style="width: 21rem; background: #2efa8e;border-radius: 1%;">
+                    <div class="card m-2" style="width: 21rem; background: #F1F4F6;border-radius: 1%;">
                         <img class="card-img-top" style="height: 220px;" src="{{ asset('storage/event/'.$ongoing->name) }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $ongoing->title }}</h5>
@@ -97,7 +97,7 @@
             @endif
             <div class="d-flex justify-content-center flex-wrap" >
                 @foreach($closed_list as $closed)
-                    <div class="card m-2" style="width: 21rem;background: #aee7c9;border-radius: 1%;">
+                    <div class="card m-2" style="width: 21rem;background: #b3dbda;border-radius: 1%;">
                         <img class="card-img-top" style="height: 220px;" src="{{ asset('storage/event/'.$closed->name) }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $closed->title }}</h5>

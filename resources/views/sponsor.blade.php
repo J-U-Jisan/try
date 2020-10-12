@@ -14,14 +14,14 @@
                     <h2 class="text-black-50">OUR SPONSORS</h2>
                 </div>
             </div>
-            <div class="d-flex justify-content-center flex-wrap" >
+            <div class="d-flex justify-content-center flex-wrap {{ $partners->count()==0?'mb-5 pb-5':'' }}" >
                 @if($partners->count()==0)
                     <div class="bg-danger text-white p-3">No Sponsors. Contact for being sponsor of us</div>
                 @endif
                 @foreach($partners as $partner)
                         <div class="card m-2" style="width: 18rem; border-radius: 1%;">
                             <img src="{{ asset('storage/partner/'.$partner->name) }}" class="card-img-top partner" alt="...">
-                            <div class="card-footer text-center" style="background: #8fed84;">
+                            <div class="card-footer text-center" style="background: #B3DBDA;">
                                 <p class="card-text font-weight-bold">{{ $partner->title }}</p>
                             </div>
                         </div>

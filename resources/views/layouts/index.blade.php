@@ -23,13 +23,13 @@
             $length = strlen(Auth::user()->name);
         ?>
     @endguest
-    <div class="collapse navbar-collapse" style="transform: {{ $length>10?'translateX(25%)':'translateX(30%)' }};" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse" style="transform: {{ $length>10?'translateX(21%)':'translateX(25%)' }};" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item">
+            <li class="nav-item ml-2">
                 <a class="nav-link" href="{{ route('welcome') }}">HOME</a>
             </li>
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown ml-2">
                 <a class="nav-link dropdown-toggle" href="{{ route('event') }}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     EVENT
                 </a>
@@ -39,17 +39,17 @@
                     <a class="dropdown-item" href="{{ route('event').'#closed' }}">Closed</a>
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ml-2">
                 <a class="nav-link" href="{{ route('donation') }}">DONATION</a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item ml-2">
                 <a class="nav-link" href="{{ route('partner') }}">SPONSORS</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ml-2">
                 <a class="nav-link" href="{{ route('blog') }}">BLOG</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown ml-2">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     ABOUT
                 </a>
@@ -62,7 +62,7 @@
                 </div>
             </li>
             @guest
-            <li class="nav-item">
+            <li class="nav-item ml-2">
                 <button class="btn btn-outline-dark bg-transparent px-2 py-0"><a class="nav-link" href="{{ route('login') }}">Sign In</a></button>
             </li>
             @else
