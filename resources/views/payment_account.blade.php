@@ -13,23 +13,23 @@
             <br>
             @isset($account->name)
             <span class="font-weight-bold" style="font-size: 20px;">Name : </span>
-            <span style="font-size: 20px;"> Jalal Uddin</span>
+            <span style="font-size: 20px;">{{ $account->name }}</span>
             <br>
             @endisset
 
             @isset($account->branch)
             <span class="font-weight-bold" style="font-size: 20px;">Branch : </span>
-            <span style="font-size: 20px;">Lohagara Branch, Chattogram</span>
+            <span style="font-size: 20px;">{{ $account->branch }}</span>
             <br>
             @endisset
             @isset($account->routing_no)
             <span class="font-weight-bold" style="font-size: 20px;">Routing No : </span>
-            <span style="font-size: 20px;">060154675</span>
+            <span style="font-size: 20px;">{{ $account->routing_no }}</span>
             <br>
             @endisset
             @isset($account->mobile_no)
             <span class="font-weight-bold" style="font-size: 20px;">Mobile No : </span>
-            <span style="font-size: 20px;">01859367602</span>
+            <span style="font-size: 20px;">{{ $account->mobile_no }}</span>
             @endisset
 
         </div>
