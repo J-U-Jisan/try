@@ -88,7 +88,7 @@
     }
 </script>
 
-//Chatbot Inegration
+<!--Chatbot Inegration -->
 <!--
 <script>
     window.fbAsyncInit = function() {

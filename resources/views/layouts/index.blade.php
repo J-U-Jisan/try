@@ -6,7 +6,7 @@
 <body  onload="changeClass()">
 
 <div class="loader">
-    <img src="{{ asset('images/logo.png') }}" alt="loading...">
+    <img src="{{ asset('images/loading.gif') }}" alt="loading...">
 </div>
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="{{ route('welcome') }}">
