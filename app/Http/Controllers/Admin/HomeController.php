@@ -24,7 +24,7 @@ class HomeController extends Controller
             $videos = DB::table('video')->get();
 
             $approval_list = DB::table('volunteer')
-                            ->where('approve',0)
+                            ->whereNull('approve')
                             ->paginate(5,['*'], 'approval');
 
             $volunteer_list = DB::table('volunteer')
