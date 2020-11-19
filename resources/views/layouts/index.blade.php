@@ -98,7 +98,7 @@
 <!-- Your Chat Plugin code -->
 <div class="fb-customerchat"
      attribution=setup_tool
-     page_id="112327373972416">
+     page_id="1590502034512735">
 </div>
 @include('footer')
 @include('script')
