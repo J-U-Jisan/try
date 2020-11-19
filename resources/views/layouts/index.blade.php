@@ -57,8 +57,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{{ route('history') }}">History</a><hr>
                     <a class="dropdown-item" href="{{ route('welcome').'#mission' }}">Mission & Vission</a><hr>
-                    <a class="dropdown-item" href="{{ route('member') }}">Member</a><hr>
-                    <a class="dropdown-item" href="#work">How it works</a>
+                    <a class="dropdown-item" href="{{ route('member') }}">Member</a>
                 </div>
             </li>
             @guest
@@ -102,7 +101,8 @@
 <!-- Your Chat Plugin code -->
 <div class="fb-customerchat"
      attribution=setup_tool
-     page_id="1590502034512735">
+     page_id="112327373972416"
+     theme_color="#00A78E">
 </div>
 </body>
 </html>
