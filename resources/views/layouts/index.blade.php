@@ -95,12 +95,14 @@
     </div>
 </div>
 
+
+@include('footer')
+@include('script')
+
 <!-- Your Chat Plugin code -->
 <div class="fb-customerchat"
      attribution=setup_tool
      page_id="1590502034512735">
 </div>
-@include('footer')
-@include('script')
 </body>
 </html>
