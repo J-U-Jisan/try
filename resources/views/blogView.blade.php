@@ -9,7 +9,7 @@
 @endsection
 
 @section('description')
-    {!! \Illuminate\Support\Str::limit($post->details, 150, '...') !!}
+    {!! \Illuminate\Support\Str::limit(strip_tags($post->details), 150, '...') !!}
 @endsection
 
 @section('image', asset('storage/post/'.$post->featured_image))

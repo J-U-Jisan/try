@@ -9,7 +9,7 @@
 @endsection
 
 @section('description')
-    {!! \Illuminate\Support\Str::limit($event->details, 150, '...') !!}
+    {!! \Illuminate\Support\Str::limit(strip_tags($event->details), 150, '...') !!}
 @endsection
 
 @section('image', asset('storage/event/'.$event->name))
