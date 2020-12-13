@@ -8,7 +8,7 @@
             @if (session()->has('partner_success'))
                 <div class="alert alert-success w-25">
                     <strong>{{ session('partner_success') }}</strong>
-                </div>
+                </div>s
             @endif
             @if (session()->has('partner_fail'))
                 <div class="alert alert-danger w-25">

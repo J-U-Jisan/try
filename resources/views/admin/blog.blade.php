@@ -75,7 +75,7 @@
                         </form>
                     </div>
                 @endforeach
-                {{ $posts->onEachSide(2)->render() }}
+                {{ $posts->render() }}
             </div>
         </div>
     </section>

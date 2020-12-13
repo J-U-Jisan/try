@@ -24,7 +24,7 @@
                     </div>
                 @endforeach
             </div>
-            {{ $members->onEachSide(2)->render() }}
+            {{ $members->render() }}
         </div>
     </section>
 @endsection

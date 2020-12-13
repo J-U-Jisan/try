@@ -197,7 +197,7 @@
                 @endforeach
                 </tbody>
             </table>
-            {{ $pendings->appends(['received'=>$confirms->currentPage()])->onEachSide(2)->render() }}
+            {{ $pendings->appends(['received'=>$confirms->currentPage()])->render() }}
         </div>
     </section>
     <section class="celarfix my-5 pb-5">
@@ -239,7 +239,7 @@
                 @endforeach
                 </tbody>
             </table>
-            {{ $confirms->appends(['pending'=>$confirms->currentPage()])->onEachSide(2)->render() }}
+            {{ $confirms->appends(['pending'=>$confirms->currentPage()])->render() }}
         </div>
     </section>
 @endsection

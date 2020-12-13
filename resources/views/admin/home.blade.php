@@ -175,7 +175,7 @@
             </form>
         </div>
         @endforeach
-        {{ $approval_list->appends(['volunteer'=> $volunteer_list->currentPage()])->onEachSide(2)->render("pagination::bootstrap-4") }}
+        {{ $approval_list->appends(['volunteer'=> $volunteer_list->currentPage()])->render("pagination::bootstrap-4") }}
     </div>
 </section>
 <section class="help clearfix py-5">
@@ -236,7 +236,7 @@
                 </form>
             </div>
         @endforeach
-        {{ $volunteer_list->appends(['approval'=> $approval_list->currentPage()])->onEachSide(2)->render("pagination::bootstrap-4") }}
+        {{ $volunteer_list->appends(['approval'=> $approval_list->currentPage()])->render("pagination::bootstrap-4") }}
     </div>
 </section>
 <section class="help clearfix py-5" id="footer">
