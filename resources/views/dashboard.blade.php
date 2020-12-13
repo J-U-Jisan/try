@@ -44,7 +44,7 @@
             @endforeach
             </tbody>
         </table>
-        {{ $donations->render() }}
+        {{ $donations->onEachSide(2)->render() }}
     </div>
 </section>
 @endsection

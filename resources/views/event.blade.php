@@ -42,7 +42,7 @@
                     </div>
                 @endforeach
             </div>
-            {{ $upcomings->appends(['ongoing'=> $ongoings->currentPage(), 'closed'=>$closed_list->currentPage()])->render("pagination::bootstrap-4") }}
+            {{ $upcomings->appends(['ongoing'=> $ongoings->currentPage(), 'closed'=>$closed_list->currentPage()])->onEachSide(2)->render("pagination::bootstrap-4") }}
         </div>
     </section>
     <section class="help clearfix pt-5 pb-5" id="ongoing" style="background: #b3dbda;">
@@ -79,7 +79,7 @@
                     </div>
                 @endforeach
             </div>
-            {{ $ongoings->appends(['upcoming'=> $upcomings->currentPage(), 'closed'=>$closed_list->currentPage()])->render("pagination::bootstrap-4") }}
+            {{ $ongoings->appends(['upcoming'=> $upcomings->currentPage(), 'closed'=>$closed_list->currentPage()])->onEachSide(2)->render("pagination::bootstrap-4") }}
         </div>
     </section>
     <section class="clearfix pt-5 pb-5" id="closed" style="background: #F1F4F6;">
@@ -116,7 +116,7 @@
                     </div>
                 @endforeach
             </div>
-            {{ $closed_list->appends(['upcoming'=> $upcomings->currentPage(), 'ongoing'=>$ongoings->currentPage()])->render("pagination::bootstrap-4") }}
+            {{ $closed_list->appends(['upcoming'=> $upcomings->currentPage(), 'ongoing'=>$ongoings->currentPage()])->onEachSide(2)->render("pagination::bootstrap-4") }}
         </div>
     </section>
 @endsection

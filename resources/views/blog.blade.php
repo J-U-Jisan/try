@@ -31,7 +31,7 @@
             </div>
         </div>
         @endforeach
-        {{ $posts->render() }}
+        {{ $posts->onEachSide(2)->render() }}
     </div>
 </div>
 </section>

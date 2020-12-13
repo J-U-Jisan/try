@@ -195,7 +195,7 @@
                 </div>
 
             @endforeach
-            {{ $closed_list->render("pagination::bootstrap-4") }}
+            {{ $closed_list->onEachSide(2)->render("pagination::bootstrap-4") }}
         </div>
     </section>
 @endsection

@@ -82,7 +82,7 @@
                         </form>
                     </div>
                 @endforeach
-                {{ $members->render() }}
+                {{ $members->onEachSide(2)->render() }}
             </div>
         </div>
     </section>
