@@ -631,11 +631,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff !important;
 }
 /*===================================*/
-
-.clearfix.cta-bg {
-    background: #15181d url(./img/cta-bg.png) center center/auto no-repeat local;
-    padding: 70px 0;
-}
 .cta-bg .container .row .col-md-offset-1 .cta-body h2{
     color: #fff;
 }
@@ -1628,7 +1623,7 @@ html { scroll-behavior: smooth;}
     padding: 5px 8px;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 1s;
 }
 .event-slider .card .btn button:hover{
     transform: scale(0.9);
@@ -1647,6 +1642,7 @@ html { scroll-behavior: smooth;}
 }
 /* Event donate button */
 .card-text .event:hover{
+    transition: 1s;
     transform: scale(0.9);
 }
 /* Contact Us */

@@ -26,7 +26,7 @@
                 <li class="page-item">
                     <a class="page-link" href="{{ $paginator->url(1) }}">{{1}}</a>
                 </li>
-                @if($paginator->currentPage() != 4)
+                @if($paginator->currentPage() != 3)
                     {{-- "Three Dots" Separator --}}
                     <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
                 @endif
@@ -37,7 +37,7 @@
                 </li>
             @endfor
             @if($end < $paginator->lastPage())
-                @if($paginator->currentPage() + 3 != $paginator->lastPage())
+                @if($paginator->currentPage() + 2 != $paginator->lastPage())
                     {{-- "Three Dots" Separator --}}
                     <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
                 @endif
