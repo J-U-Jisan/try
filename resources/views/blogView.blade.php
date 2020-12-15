@@ -15,13 +15,13 @@
 @section('image', asset('storage/post/'.$post->featured_image))
 
 @section('content')
-<section class="section-padding" style="background: #d7d5cf">
+<section class="section-padding" style="background: #F1F4F6">
     <div class="row justify-content-center">
     <div class="w-75">
-        <img src="{{ asset('/storage/post/'.$post->featured_image) }}" class="blog-img w-75">
-        <h2 class="mt-3">{{ $post->title }}</h2>
+        <img src="{{ asset('/storage/post/'.$post->featured_image) }}" class="blog-img" style="object-fit: cover;">
+        <h4 class="mt-3">{{ $post->title }}</h4>
         <p><i class="far fa-calendar-alt"></i> {{ $post->created_at }}</p>
-        <div class="p-5 bg-white" style="border-radius: 1%;">
+        <div class="p-2 p-sm-5 bg-white" style="border-radius: 10px;box-shadow: 0px 0px 10px 1px #999ca1;">
             {!! $post->details !!}
         </div>
         <div class="mt-4 float-right row">

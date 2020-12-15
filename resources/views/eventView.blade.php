@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-md-7 float-left mt-3 justify-content-center">
                     <div class="ml-4 col-md-8 col-sm-8 float-left">
-                        <h2>{{ $event->title }}</h2>
+                        <h4>{{ $event->title }}</h4>
                     </div>
                     <div class="col-md-3 col-sm-4 float-right">
                         <button onclick="window.location.href='{{ route('donation') }}'" class="form-control btn btn-success font-weight-bold">Donate Now</button>

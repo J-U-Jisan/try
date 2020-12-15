@@ -17,7 +17,7 @@
         @foreach($posts as $post)
         <div class="card p-2" style="box-shadow: 0px 0px 10px 1px #999ca1; padding: 15px !important; border-radius: 1%;">
             <div>
-            <h2>{{ $post->title }}</h2>
+            <h4>{{ $post->title }}</h4>
             <p><i class="far fa-calendar-alt"></i> {{ $post->created_at }}</p>
             <div class="fakeimg"><img class="blog-img" src="{{ asset('storage/post/'.$post->featured_image) }}"></div>
             <p></p>

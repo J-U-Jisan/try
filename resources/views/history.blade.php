@@ -9,7 +9,7 @@
 
 @section('content')
 <section class="section-padding" style="background: #E5E7E6;">
-    <div class="container w-75">
+    <div class="container w-75 bg-white p-2 p-sm-5 shadow" style="border-radius: 10px;">
         <p>
         TRY, a volunteer organization made by KUETians with an indomitable desire and mentality
         to stand beside people.
